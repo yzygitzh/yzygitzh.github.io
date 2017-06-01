@@ -1,0 +1,26 @@
+---
+layout: post
+title:  "GSoC 2017 Progress"
+date:   2017-06-01 16:34:00 +0800
+categories: computer_science gsoc android
+---
+# GSoC 2017 Progress
+
+My project for GSoC 2017 is [Android Sandbox Detection and Countermeasure][gsoc-project]. This post records my progress during the GSoC 2017 period.
+
+Last update: 2017-06-01
+
+## Community Bonding Period
+
+1. Modified AOSP (branch `android_6.0.1-r77`) to expand trace buffer to 64MB
+2. Ported strazzere's `anti-emulator` app to Android Marshmallow. [source][anti-emulator]
+3. Got DenDroid, a real-world malware with anti-sandbox behavior ready for testing. [source][dendroid]
+4. Modified DroidBot to support re-producible event sequences for trace comparing. [PR][droidbot-reproducible]
+5. Had a look into [Mining Sandbox][mining-sandbox] and [FuzzDroid][fuzzdroid] papers. These two papers provided me with different points of view about the detection of anti-sandbox techniques applied in Android apps.
+
+[gsoc-project]: https://summerofcode.withgoogle.com/projects/#4820206829436928
+[anti-emulator]: https://github.com/yzygitzh/anti-emulator
+[dendroid]: https://github.com/yzygitzh/dendroid_apk
+[droidbot-reproducible]: https://github.com/honeynet/droidbot/pull/40
+[mining-sandbox]: https://www.boxmate.org/files/boxmate-camera-ready.pdf
+[fuzzdroid]: http://mp.binaervarianz.de/icse2017-fuzzdroid.pdf
