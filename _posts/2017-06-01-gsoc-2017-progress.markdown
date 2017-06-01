@@ -4,8 +4,6 @@ title:  "GSoC 2017 Progress"
 date:   2017-06-01 16:34:00 +0800
 categories: computer_science gsoc android
 ---
-# GSoC 2017 Progress
-
 My project for GSoC 2017 is [Android Sandbox Detection and Countermeasure][gsoc-project]. This post records my progress during the GSoC 2017 period.
 
 Last update: 2017-06-01
