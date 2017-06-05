@@ -27,8 +27,8 @@ Phase 1 mainly contains testing anti-sandbox samples and comparing their traces.
 * May 30th - June 5th
     1. Write a testing script for automatically collect running traces on both real devices and emulators. [DONE]
     2. Test [anti-emulator][anti-emulator] and [DenDroid][dendroid] samples with the testing script. [DONE]
-    3. Design the trace comparing algorithm and implement the first version of it.
-    4. Run the trace comparing algorithm on the traces collected on the samples.
+    3. Design the trace comparing algorithm and implement the first version of it [DONE].
+    4. Run the trace comparing algorithm on the traces collected on the samples [DONE].
 * June 6th - June 12th
     1. Improve the [anti-emulator][anti-emulator] sample with timing attacks and some other techniques.
     2. Test the two sample apps on DroidBox, TaintDroid and VirusTotal and see if they can detect the frameworks.
