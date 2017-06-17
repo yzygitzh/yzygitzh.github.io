@@ -30,13 +30,18 @@ Phase 1 mainly contains testing anti-sandbox samples and comparing their traces.
     3. Design the trace comparing algorithm and implement the first version of it [DONE].
     4. Run the trace comparing algorithm on the traces collected on the samples [DONE].
 * June 6th - June 12th
-    1. Improve the [anti-emulator][anti-emulator] sample with timing attacks and some other techniques.
-    2. Test the two sample apps on DroidBox, TaintDroid and VirusTotal and see if they can detect the frameworks.
-    3. Improve the trace comparing algorithm according to the test results.
+    1. Improve the [anti-emulator][anti-emulator] sample with timing attacks and some other techniques. [DONE]
+        * Using OpenGL ES 2.0 API for graphic performance timing attack. Emulators usually have larger gap between lowest and highest FPS.
+    2. Test the two sample apps on DroidBox, TaintDroid and VirusTotal and see if they can detect the frameworks. [PENDING]
+    3. Improve the trace comparing algorithm according to the test results. [DONE]
+        * Using bipartite matching and for thread mapping.
+        * Using thread name and traces' max common prefix length for similarity between threads.
 * June 12th - June 18th
-    1. Write a testing report for the two samples.
-    2. Scale the testing app samples to a more expanded data set.
-    3. Improve the trace comparing algorithm according to the expanded test results.
+    1. Write a testing report for the two samples. [PENDING]
+    2. Scale the testing app samples to a more expanded data set. [PENDING]
+    3. Improve the trace comparing algorithm according to the expanded test results. [PENDING]
+        * Using `android.jar` `rt.jar` and some other runtime framework jars for common package name filtering.
+        * Using [LibRadar][libradar] for 3rd party library package name filtering.
 * June 18th - June 24th
     1. Evaluate the scaled testing results.
     2. Summarize the testing reports for scaled data set as a report for phase 1 evaluation.
@@ -60,3 +65,4 @@ Phase 3 mainly contains implementing control flow fixer, applying various improv
 [droidbot-reproducible]: https://github.com/honeynet/droidbot/pull/40
 [mining-sandbox]: https://www.boxmate.org/files/boxmate-camera-ready.pdf
 [fuzzdroid]: http://mp.binaervarianz.de/icse2017-fuzzdroid.pdf
+[libradar]: https://github.com/pkumza/LibRadar
