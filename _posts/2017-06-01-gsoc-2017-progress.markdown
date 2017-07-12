@@ -4,7 +4,7 @@ title:  "GSoC 2017 Progress"
 date:   2017-06-01 16:34:00 +0800
 categories: computer_science gsoc android
 ---
-Last update: 2017-06-17
+Last update: 2017-07-12
 
 My project for GSoC 2017 is [Android Sandbox Detection and Countermeasure][gsoc-project]. This post records my progress during the GSoC 2017 period. Related repositories include:
 * [DroidBot][droidbot]: A lightweight test input generator for Android
@@ -38,20 +38,37 @@ Phase 1 mainly contains testing anti-sandbox samples and comparing their traces.
         * Using thread name and traces' max common prefix length for similarity between threads.
 * June 12th - June 18th
     1. Write a testing report for the two samples. [PENDING]
-    2. Scale the testing app samples to a more expanded data set. [PENDING]
-    3. Improve the trace comparing algorithm according to the expanded test results. [PENDING]
+    2. Scale the testing app samples to a more expanded data set. [DONE]
+    3. Improve the trace comparing algorithm according to the expanded test results. [DONE]
         * Using `android.jar` `rt.jar` and some other runtime framework jars for common package name filtering.
         * Using [LibRadar][libradar] for 3rd party library package name filtering.
 * June 18th - June 24th
-    1. Evaluate the scaled testing results.
-    2. Summarize the testing reports for scaled data set as a report for phase 1 evaluation.
-    2. Investigate techniques for repairing the control flow of Android apps.
+    1. Evaluate the scaled testing results. [DONE]
+    2. Summarize the testing reports for scaled data set as a report for phase 1 evaluation. [PENDING]
+    2. Investigate techniques for repairing the control flow of Android apps. [DONE]
 * June 25th - June 27th
     1. Flexible time.
 
 # Phase 2
 
 Phase 2 mainly contains implementing anti-sandbox detector and control flow fixer.
+
+* June 28th - July 9th
+    1. Fix issues of anti-sandbox detector found in previous evaluation. [DONE]
+    2. Add finder for the collection of possible APIs leading to control flow divergence. [DONE]
+    3. Investigate JDWP protocol for control flow correction. [DONE]
+* July 10th - July 16th
+    1. Design & implement a prototype of control flow correction tool
+        * Manually written rules
+        * Based on JDWP protocol
+        * (MAYBE) Cancel ANR timeout in android source
+    2. Evaluate the control flow correction prototype on Anti-emulator sample
+* July 17th - July 23th
+    1. Implement return value collector prototype (for Boolean return valued methods)
+    2. Make the control flow correction tool rule being generated automatically
+    3. Evaluate the new automatic tool on Anti-emulator example
+* July 24th\
+    1. Flexible time.
 
 # Phase 3
 
