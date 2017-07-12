@@ -57,6 +57,7 @@ Phase 2 mainly contains implementing anti-sandbox detector and control flow fixe
     1. Fix issues of anti-sandbox detector found in previous evaluation. [DONE]
     2. Add finder for the collection of possible APIs leading to control flow divergence. [DONE]
     3. Investigate JDWP protocol for control flow correction. [DONE]
+    4. Investigate the possibility for recording return values in ART runtime (`aosp/art/runtime/`) [DONE]
 * July 10th - July 16th
     1. Design & implement a prototype of control flow correction tool
         * Manually written rules
