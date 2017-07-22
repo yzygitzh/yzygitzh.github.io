@@ -4,7 +4,7 @@ title:  "GSoC 2017 Progress"
 date:   2017-06-01 16:34:00 +0800
 categories: computer_science gsoc android
 ---
-Last update: 2017-07-12
+Last update: 2017-07-22
 
 My project for GSoC 2017 is [Android Sandbox Detection and Countermeasure][gsoc-project]. This post records my progress during the GSoC 2017 period. Related repositories include:
 * [DroidBot][droidbot]: A lightweight test input generator for Android
@@ -59,15 +59,19 @@ Phase 2 mainly contains implementing anti-sandbox detector and control flow fixe
     3. Investigate JDWP protocol for control flow correction. [DONE]
     4. Investigate the possibility for recording return values in ART runtime (`aosp/art/runtime/`) [DONE]
 * July 10th - July 16th
-    1. Design & implement a prototype of control flow correction tool
+    1. Design & implement a prototype of control flow correction tool [DONE]
         * Manually written rules
         * Based on JDWP protocol
         * (MAYBE) Cancel ANR timeout in android source
-    2. Evaluate the control flow correction prototype on Anti-emulator sample
+    2. Evaluate the control flow correction prototype on Anti-emulator sample [REPLANNED]
 * July 17th - July 23th
-    1. Implement return value collector prototype (for Boolean return valued methods)
-    2. Make the control flow correction tool rule being generated automatically
-    3. Evaluate the new automatic tool on Anti-emulator example
+    1. Implement return value collector prototype (for Boolean return valued methods) [DONE]
+    2. Make the control flow correction tool rule being generated automatically [REPLANNED]
+    3. Evaluate the new automatic tool on Anti-emulator example [DONE]
+    4. The control flow correction tool is re-designed to be implemented by [Xposed][xposed] for the following reasons:
+        * The JDWP implemented by Android runtime support neither `forceEarlyReturn` feature nor runtime stack modification
+        * Xposed is feasible to modify the return values of all methods easily
+    5. Modify AOSP to make JDWP detection API provided by Android
 * July 24th\
     1. Flexible time.
 
@@ -84,3 +88,4 @@ Phase 3 mainly contains implementing control flow fixer, applying various improv
 [mining-sandbox]: https://www.boxmate.org/files/boxmate-camera-ready.pdf
 [fuzzdroid]: http://mp.binaervarianz.de/icse2017-fuzzdroid.pdf
 [libradar]: https://github.com/pkumza/LibRadar
+[xposed]: https://forum.xda-developers.com/showthread.php?t=3034811
