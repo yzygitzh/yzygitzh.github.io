@@ -14,4 +14,4 @@ This method can also be used to create different themes for different blogs if o
 
 The big picture:
 
-![Blog Structure]({{ site.url }}/assets/2017-03-15-the-structure-of-this-blog.png)
+![Blog Structure]({{ site.url }}/assets/2017-03-15-the-structure-of-this-blog/blog-structure.png)
