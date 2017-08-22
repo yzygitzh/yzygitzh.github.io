@@ -2,7 +2,8 @@
 layout: post
 title:  "GSoC 2017 Progress"
 date:   2017-06-01 16:34:00 +0800
-categories: computer_science gsoc android
+categories: GSoC
+tags: Computer_Science GSoC Android
 ---
 Last update: 2017-08-01
 
