@@ -3,7 +3,7 @@ layout: post
 title:  "The Structure of This Blog"
 date:   2017-03-15 21:44:52 +0800
 categories: Misc
-tags: Git
+tags: Computer_Science Git
 ---
 This is the first post of this blog, and it's about how I manage this blog.
 

@@ -3,7 +3,7 @@ layout: post
 title:  "kdump/kexec Workflow in Fedora x86"
 date:   2017-04-30 09:00:00 +0800
 categories: Linux
-tags: Linux Kernel kexec kdump
+tags: Computer_Science Linux Kernel kexec kdump
 ---
 
 This post describes the detailed code control flow of kdump/kexec utilities in Fedora x86.
