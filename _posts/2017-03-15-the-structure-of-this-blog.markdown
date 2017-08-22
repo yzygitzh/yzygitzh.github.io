@@ -2,7 +2,8 @@
 layout: post
 title:  "The Structure of This Blog"
 date:   2017-03-15 21:44:52 +0800
-categories: computer_science other
+categories: Misc
+tags: Computer_Science Git
 ---
 This is the first post of this blog, and it's about how I manage this blog.
 
@@ -14,4 +15,4 @@ This method can also be used to create different themes for different blogs if o
 
 The big picture:
 
-![Blog Structure]({{ site.url }}/assets/2017-03-15-the-structure-of-this-blog.png)
+![Blog Structure]({{ site.url }}/assets/2017-03-15-the-structure-of-this-blog/blog-structure.png)
