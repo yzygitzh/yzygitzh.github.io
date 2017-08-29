@@ -12,6 +12,7 @@ My project for GSoC 2017 is [Android Sandbox Detection and Countermeasure][gsoc-
 ReDroid is a toolbox for **automatically detecting and countering** anti-sandbox behaviors in Android apps. You can:
 * [View source on GitHub][redroid]
 * [Download as zip file][redroid-zip]
+* [View usage example]({% post_url 2017-08-29-redroid-usage %})
 
 # What we planned
 
