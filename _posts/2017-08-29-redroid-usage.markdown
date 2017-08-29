@@ -2,7 +2,7 @@
 layout: post
 title:  "ReDroid Usage Example"
 date:   2017-08-29 10:40:00 +0800
-categories: GSoC
+categories: Android
 tags: Computer_Science GSoC Android
 ---
 ReDroid is a toolbox for **automatically detecting and countering** anti-sandbox behaviors in Android apps. You can find the source [here][redroid]. This post gives a usage example of ReDroid by walking through what ReDroid have done for an Android app equipped with anti-sandbox behaviors, [`anti-emulator`][anti-emulator].
