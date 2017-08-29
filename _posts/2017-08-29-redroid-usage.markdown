@@ -36,7 +36,7 @@ The default workflow of ReDroid can be launched as steps specified on [source pa
 
 2. `ReDroid_apps_droidbot_out`
 
-    This folder contains information collected by DroidBot. Before any further action, ReDroid will first launch DroidBot to run dynamic tests on the specified apps with different platforms (emulator and real device). The test cases are the same between platforms, so after that we can detect runtime behavior differences caused by anti-sandbox techniques.
+    This folder contains information collected by [DroidBot][droidbot]. Before any further action, ReDroid will first launch DroidBot to run dynamic tests on the specified apps with different platforms (emulator and real device). The test cases are the same between platforms, so after that we can detect runtime behavior differences caused by anti-sandbox techniques.
 
 3. `ReDroid_trace_comparator_out`
 
@@ -147,14 +147,9 @@ ReDroid can automatically build an undetectable environment from apk files and i
 
 If you like [ReDroid][redroid], please give it a star :)
 
-[gsoc-project]: https://summerofcode.withgoogle.com/projects/#4820206829436928
 [droidbot]: https://github.com/honeynet/droidbot
 [anti-emulator]: https://github.com/yzygitzh/anti-emulator
-[dendroid]: https://github.com/yzygitzh/dendroid_apk
 [redroid]: https://github.com/yzygitzh/ReDroid
-[xposed]: https://forum.xda-developers.com/showthread.php?t=3034811
-[redroid]: https://github.com/yzygitzh/ReDroid
-[redroid-zip]: https://github.com/yzygitzh/ReDroid/archive/master.zip
 [taintdroid]: http://www.appanalysis.org/
 [monkey]: https://developer.android.com/studio/test/monkey.html
 [emu-paper]: http://bitblaze.cs.berkeley.edu/papers/VMSec02-kang.pdf
