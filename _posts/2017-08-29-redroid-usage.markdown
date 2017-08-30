@@ -13,7 +13,7 @@ Apps with anti-sandbox behaviors would behave differently on real and emulated e
 
 |Emulator|&nbsp;&nbsp;&nbsp;&nbsp;|Real Device|
 |:---:||:---:|
-|<img src="{{ site.url }}/assets/2017-08-29-redroid-usage/emulator_before.png" height="480"/>||<img src="{{ site.url }}/assets/2017-08-29-redroid-usage/real_device.png" height="480"/>|
+|<img src="{{ site.url }}/assets/2017-08-29-redroid-usage/emulator_before.png" width="240"/>||<img src="{{ site.url }}/assets/2017-08-29-redroid-usage/real_device.png" width="240"/>|
 
 As we can see from the screenshots, the `anti-emulator` app contains common anti-sandbox behaviors, including:
 * *isTaintTrackingDetected*: Checking whether there is [TaintDroid][taintdroid] installed;
@@ -134,7 +134,7 @@ The default workflow of ReDroid can be launched as steps specified on [source pa
 
     The `dsm.json` file will be uploaded to the emulator's `/data/system/ReDroid/` path and loaded by ReDroid Xposed module. After that, the `anti-emulator` app cannot detect QEMU files in emulators any more:
 
-    <img src="{{ site.url }}/assets/2017-08-29-redroid-usage/emulator_after.png" height="480"/>
+    <img src="{{ site.url }}/assets/2017-08-29-redroid-usage/emulator_after.png" width="240"/>
 
     As for the `slowGraphicDetected` check item, it's not covered in the method set before diverging point. ReDroid are supposed to applied iteratively here to solve the problem.
 
