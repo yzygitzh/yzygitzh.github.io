@@ -59,11 +59,11 @@ To solve the problem, one have to get access to the login greeter. `x11vnc` actu
 
 First, to access the login greeter, use
 
-    sudo x11vnc -display :0 -auth /run/user/<gdm-uid>/gdm/Xauthority
+    $ sudo x11vnc -display :0 -auth /run/user/<gdm-uid>/gdm/Xauthority
 
 assuming that the greeter is opened on display :0. the `gdm-uid` is the uid of user in which most of Gnome's operations are done, in my case it's 118. The `-auth` option specifies the authority cookie of opened X (see [`x11vnc`'s official FAQ](http://www.karlrunge.com/x11vnc/faq.html#faq)). After that connect to this x11vnc service and you should be able to login. However, after login, you might meet a black screen. This is because a new X display is opened. You can use
 
-    ps aux | grep Xorg
+    $ ps aux | grep Xorg
 
 to have a look. In my case, the output is like
 
@@ -72,7 +72,7 @@ to have a look. In my case, the output is like
 
 You can see that a new authority cookie for uid 1000 is generated. Now you can access your own desktop using
 
-    x11vnc -display :1 -auth /run/user/<user-uid>/gdm/Xauthority
+    $ x11vnc -display :1 -auth /run/user/<user-uid>/gdm/Xauthority
 
 in my case `<user-uid>` is 1000. Note that the display number is :1, since the old display is still opened, though black screen.
 
