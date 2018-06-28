@@ -113,8 +113,6 @@ Pruning is data-driven, i.e. the subset of a layer to prune is selected by apply
 
 For a single layer, the problem is formalized as a optimization problem minimizing the subset's contribution to layer output, which is NP-hard. The paper used greedy policy followed by fine-tuning to solve the problem. The whole network is pruned layer by layer.
 
-## **References**
-
 [han2015learning]: http://papers.nips.cc/paper/5784-learning-both-weights-and-connections-for-efficient-neural-network.pdf
 [hu2016network]: http://arxiv.org/pdf/1607.03250.pdf
 [li2016pruning]: https://arxiv.org/pdf/1608.08710.pdf
