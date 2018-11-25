@@ -14,6 +14,7 @@ tags: Algorithm
 
 * Suffix Array
     * [USACO Music Theme]({{ usaco }}theme.cpp): There is also a DP solution. See USACO analysis.
+    * [USACO Hidden Passwords]({{ usaco }}hidden.cpp): Sort rotates of a string.
 
 # Computational Geometry
 
@@ -26,6 +27,9 @@ tags: Algorithm
 
 * Rectangle
     * [USACO Window Area]({{ usaco }}window.cpp): Rectangle overlapping algorithm (floating-up).
+
+* Line Sweeping
+    * [USACO Picture]({{ usaco }}picture.cpp): Find perimeter of stacked rectangles.
 
 # Dynamic Programming
 
@@ -44,6 +48,9 @@ tags: Algorithm
 * [USACO Buy Low, Buy Lower]({{ usaco }}buylow.cpp): Find number of unique longest decreasing subsequences.
 * [USACO Milk Measuring]({{ usaco }}milk4.cpp): DFSID + DP validation also works.
 * [USACO Big Barn]({{ usaco }}bigbrn.cpp): Find maximum square in an area with obstacles.
+* [USACO Canada Tour]({{ usaco }}tour.cpp)
+* [USACO Character Recognition]({{ usaco }}charrec.cpp)
+* [USACO Two Five]({{ usaco }}twofive.cpp): High demension DP.
 
 # Greedy
 
@@ -76,6 +83,7 @@ tags: Algorithm
         * Edmond-Karp
         * [USACO Drainage Ditches]({{ usaco }}ditch.cpp)
         * [USACO Pollutant Control]({{ usaco }}milk6.cpp): Find minimum cut with minimum number of edges.
+        * [USACO TeleCowmunication]({{ usaco }}telecow.cpp): Minimum point cut.
     * Maximum Matching
         * [USACO The Perfect Stall]({{ usaco }}stall4.cpp)
 
