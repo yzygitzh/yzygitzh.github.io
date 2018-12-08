@@ -34,7 +34,7 @@ tags: Algorithm
 # Dynamic Programming
 
 * [USACO Number Triangles]({{ usaco }}numtri.cpp): Find maximum sum from root to leaf in a tree.
-* [USACO Subset Sums]({{ usaco }}bigbrn.cpp): Find number of possible subsets adding to a number.
+* [USACO Subset Sums]({{ usaco }}subset.cpp): Find number of possible subsets adding to a number.
 * [USACO Longest Prefix]({{ usaco }}prefix.cpp): Find the longest prefix of a string constructable by words from a dictionary.
 * [USACO Cow Pedigrees]({{ usaco }}nocows.cpp): Find number of possible complete binary trees with N nodes.
 * [USACO Money Systems]({{ usaco }}money.cpp): Find number of ways to compose N given smaller numbers.
@@ -90,6 +90,10 @@ tags: Algorithm
 * Flood Filling
     * [USACO Street Race]({{ usaco }}race3.cpp)
 
+* Strong Connected Region
+    * Tarjan algorithm
+    * [USACO Network of Schools]({{ usaco }}schlnet.cpp)
+
 # Math
 
 * Mini-Max Search
@@ -121,6 +125,7 @@ tags: Algorithm
     * [USACO Prime Cryptarithm]({{ usaco }}crypt1.cpp)
     * [USACO Combination Lock]({{ usaco }}combo.cpp)
     * [USACO Wormholes]({{ usaco }}wormhole.cpp)
+    * [USACO The Tamworth Two]({{ usaco }}ttwo.cpp)
     * [USACO Ski Course Design]({{ usaco }}skidesign.cpp): There is an O(Nlog(M)) solution, where M is the range of heights.
     * [USACO Arithmetic Progressions]({{ usaco }}ariprog.cpp): Search space pruning.
     * [USACO Prime Palindromes]({{ usaco }}pprime.cpp): Find all palindrome primes between two numbers.
