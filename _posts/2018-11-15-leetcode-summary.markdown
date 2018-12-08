@@ -118,7 +118,6 @@ tags: Algorithm
 * [347 Top K Frequent Elements]({{ leetcode }}347.cpp)
 * [355 Design Twitter]({{ leetcode }}355.cpp)
 * [373 Find K Pairs with Smallest Sums]({{ leetcode }}373.cpp)
-* [378 Kth Smallest Element in a Sorted Matrix]({{ leetcode }}378.cpp)
 
 # Stack
 
@@ -269,7 +268,6 @@ tags: Algorithm
 * [127 Word Ladder]({{ leetcode }}127.cpp)
 * [130 Surrounded Regions]({{ leetcode }}130.cpp)
 * [133 Clone Graph]({{ leetcode }}133.cpp)
-* [199 Binary Tree Right Side View]({{ leetcode }}199.cpp)
 * [200 Number of Islands]({{ leetcode }}200.cpp)
 * [207 Course Schedule]({{ leetcode }}207.cpp)
 * [210 Course Schedule II]({{ leetcode }}210.cpp)
