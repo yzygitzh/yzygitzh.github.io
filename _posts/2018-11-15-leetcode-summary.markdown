@@ -134,6 +134,11 @@ tags: Algorithm
 # Heap
 
 * [215 Kth Largest Element in an Array]({{ leetcode }}215.cpp)
+    * O(n+klogk) time using heap sort
+    * O(nlogk) time using minimum heap
+    * Average O(n) using quick-sort like quick-select
+    * Strict O(n) using divide & conquer
+    * O(32n) time using trie
 * [295 Find Median from Data Stream]({{ leetcode }}295.cpp)
     * O(32) insertion and O(32) query by trie.
     * O(log(n)) insertion and O(1) query by maintaining small-half maxheap and large-half minheap.
@@ -158,6 +163,8 @@ tags: Algorithm
 * [239 Sliding Window Maximum]({{ leetcode }}239.cpp)
     * Monotonic queue, similar with 84.
     * O(nk) time using trie, where k is the length of int.
+* [316 Remove Duplicate Letters]({{ leetcode }}316.cpp)
+    * O(n) time using mono-increasing stack.
 * [331 Verify Preorder Serialization of a Binary Tree]({{ leetcode }}331.cpp)
 * [341 Flatten Nested List Iterator]({{ leetcode }}341.cpp)
 * [388 Longest Absolute File Path]({{ leetcode }}388.cpp)
@@ -182,7 +189,11 @@ tags: Algorithm
 * [91 Decode Ways]({{ leetcode }}91.cpp)
 * [95 Unique Binary Search Trees II]({{ leetcode }}95.cpp)
 * [96 Unique Binary Search Trees]({{ leetcode }}96.cpp)
-    * O(n) time by Catalan number deduction: C(n) = C(n-1)
+    * O(n) time by Catalan number deduction
+    * C(n) = (2n, n) / (n + 1)
+    * C(n) = (2n, n) - (2n, n + 1)
+    * C(n) = C(0)C(n - 1) + C(1)C(n - 2) ... + C(n - 1)C(0)
+    * C(n) = 2(2n - 1) / (n + 1) * C(n - 1)
 * [97 Interleaving String]({{ leetcode }}97.cpp)
 * [115 Distinct Subsequences]({{ leetcode }}115.cpp)
 * [120 Triangle]({{ leetcode }}120.cpp)
@@ -207,18 +218,26 @@ tags: Algorithm
     * O(n) time. Similar to USACO Humble Numbers.
 * [279 Perfect Squares]({{ leetcode }}279.cpp)
 * [300 Longest Increasing Subsequence]({{ leetcode }}300.cpp)
-    * O(nlog(n)) time.
+    * O(nlog(n)) time achieved by 1D/1D update optimization, i.e. monotonous stack.
 * [304 Range Sum Query 2D - Immutable]({{ leetcode }}304.cpp)
 * [309 Best Time to Buy and Sell Stock with Cooldown]({{ leetcode }}309.cpp)
     * O(n) time with DFA method.
+* [312 Burst Ballons]({{ leetcode }}312.cpp)
+    * In order to make sub-problems well-defined, intervals should be closed.
 * [322 Coin Change]({{ leetcode }}322.cpp)
+* [329 Longest Increasing Path in a Matrix]({{ leetcode }}329.cpp)
 * [334 Increasing Triplet Subsequence]({{ leetcode }}334.cpp)
     * O(n) time and O(1) space.
 * [338 Counting Bits]({{ leetcode }}338.cpp)
     * O(n) time (no O(n) * sizeof(int)).
 * [343 Integer Break]({{ leetcode }}343.cpp)
     * O(log(n)) time using math. Break the number into 3's as many as possible.
+* [354 Russian Doll Envelops]({{ leetcode }}354.cpp)
+    * O(n^2) with straightforward solution, but DFS with memo can time out.
+    * Easy optimization to O(nlog(n)), like LIS. Mind boundary conditions when sorting.
 * [357 Count Numbers with Unique Digits]({{ leetcode }}357.cpp)
+* [363 Max Sum of Rectangle No Larger Than K]({{ leetcode }}363.cpp)
+    * O(n^2 * mlog(m)) time using binary search in prefix sums.
 * [368 Largest Divisible Subset]({{ leetcode }}368.cpp)
 * [377 Combination Sum IV]({{ leetcode }}377.cpp)
 * [940 Distinct Subsequences II]({{ leetcode }}940.cpp)
@@ -247,6 +266,9 @@ tags: Algorithm
     * O(m + n) time.
     * O(min(m, n)) time divide & conquer.
 * [275 H-Index II]({{ leetcode }}275.cpp)
+* [327 Count of Range Sum]({{ leetcode }}327.cpp)
+    * O(nlog(n)) time by using balanced BST-alike data structure. Trie is also ok.
+    * By introducing prefix sums, this is a typical 1D/1D DP problem whose updating process can be optimized.
 * [378 Kth Smallest Element in a Sorted Matrix]({{ leetcode }}378.cpp)
     * O(n) time algorithm presented in paper "Selection in X + Y and matrices with sorted rows and columns", where n is number of rows.
 
@@ -255,6 +277,7 @@ tags: Algorithm
 * [218 The Skyline Problem]({{ leetcode }}218.cpp)
 * [220 Contains Duplicate III]({{ leetcode }}220.cpp)
     * Use set::lower_bound is sufficient.
+* [352 Data Stream as Disjoint Intervals]({{ leetcode }}352.cpp)
 * [938 Range Sum of BST]({{ leetcode }}938.cpp)
 
 # Greedy
@@ -264,6 +287,9 @@ tags: Algorithm
 * [134 Gas Station]({{ leetcode }}134.cpp)
 * [135 Candy]({{ leetcode }}135.cpp)
     * O(n) time and O(1) space.
+* [321 Create Maximum Number]({{ leetcode }}321.cpp)
+* [330 Patching Array]({{ leetcode }}330.cpp)
+    * If \[0, n) is filled, then \[0, n + m) can be filled for any m <= n.
 * [376 Wiggle Subsequence]({{ leetcode }}56.cpp)
 * [945 Minimum Increment to Make Array Unique]({{ leetcode }}945.cpp)
 * [948 Bag of Tokens]({{ leetcode }}948.cpp)
@@ -292,6 +318,8 @@ tags: Algorithm
 * [396 Rotate Functoin]({{ leetcode }}396.cpp)
 * [949 Largest Time for Given Digits]({{ leetcode }}949.cpp)
 * [963 Minimum Area Rectangle II]({{ leetcode }}963.cpp)
+* [970 Powerful Integers]({{ leetcode }}970.cpp)
+* [972 Equal Rational Numbers]({{ leetcode }}972.cpp)
 
 # Divide and Conquer
 
@@ -329,6 +357,7 @@ tags: Algorithm
 * [337 House Robber III]({{ leetcode }}337.cpp)
 * [951 Flip Equivalent Binary Trees]({{ leetcode }}951.cpp)
 * [965 Univalued Binary Tree]({{ leetcode }}965.cpp)
+* [971 Flip Binary Tree To Match Preorder Traversal]({{ leetcode }}971.cpp)
 
 # Sort
 
@@ -336,6 +365,7 @@ tags: Algorithm
     * O(n) time by direct insert.
 * [148 Sort List]({{ leetcode }}148.cpp)
 * [274 H-Index]({{ leetcode }}274.cpp)
+* [969 Pancake Sorting]({{ leetcode }}969.cpp)
 
 # Bit Manipulation
 
@@ -361,6 +391,8 @@ tags: Algorithm
 * [200 Number of Islands]({{ leetcode }}200.cpp)
 * [207 Course Schedule]({{ leetcode }}207.cpp)
 * [210 Course Schedule II]({{ leetcode }}210.cpp)
+* [301 Remove Invalid Parentheses]({{ leetcode }}301.cpp)
+    * Caculate redundant left and right brackets first.
 * [332 Reconstruct Itinerary]({{ leetcode }}332.cpp)
     * O(n) time since the problem is finding Eularian path.
 * [386 Lexicographical Numbers]({{ leetcode }}386.cpp)
@@ -369,6 +401,7 @@ tags: Algorithm
 # Graph
 
 * [399 Evaluate Division]({{ leetcode }}399.cpp)
+    * Union-find is also ok. For each a/b=x, assume a=x and b=1. If a and b already have assumed values, update them. Union-find is used for this update.
 
 # Trie
 
@@ -376,15 +409,23 @@ tags: Algorithm
     * O(n) time.
 * [208 Implement Trie (Prefix Tree)]({{ leetcode }}208.cpp)
 * [212 Word Search II]({{ leetcode }}212.cpp)
+* [336 Palindrome Pairs]({{ leetcode }}336.cpp)
+    * O(nk^2) time, using trie to find the other end of a palindrome.
+    * Use hashset to find also works.
 
 # Design
 
 * [146 LRU Cache]({{ leetcode }}146.cpp)
 * [284 Peeking Iterator]({{ leetcode }}284.cpp)
+    * Create a temporary iterator and fint its next.
     * Cache next element.
 * [380 Insert Delete GetRandom O(1)]({{ leetcode }}380.cpp)
+* [381 Insert Delete GetRandom O(1) - Duplicates allowed]({{ leetcode }}381.cpp)
 
 # Segment Tree & Binary Index Tree
 
 * [307 Range Sum Query - Mutable]({{ leetcode }}307.cpp)
+* [315 Count of Smaller Numbers After Self]({{ leetcode }}315.cpp)
+    * Instrumented merge sort also do.
+    * Maintain a sorted array and do binary search in it also do.
 
