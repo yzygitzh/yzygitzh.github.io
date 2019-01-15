@@ -20,11 +20,14 @@ tags: Algorithm
 * [59 Spiral Matrix II]({{ leetcode }}59.cpp)
 * [73 Set Matrix Zeros]({{ leetcode }}73.cpp)
     * O(mn) time and O(1) space.
+* [163 Missing Ranges]({{ leetcode }}163.cpp)
+    * Mind overflow.
 * [169 Majority Element]({{ leetcode }}169.cpp)
     * O(n) time and O(1) space achieved by Boyer Moore Vote algorithm.
 * [229 Majority Element II]({{ leetcode }}169.cpp)
     * Boyer Moore Vote can be extended to O(n) time and O(k) space in general [n/k] case.
     * Each time throw k different elements.
+* [245 Shortest Word Distance III]({{ leetcode }}245.cpp)
 * [289 Game of Life]({{ leetcode }}289.cpp)
 * [950 Reveal Cards In Increasing Order]({{ leetcode }}950.cpp)
 * [961 N-Repeated Element in Size 2N Array]({{ leetcode }}961.cpp)
@@ -50,14 +53,18 @@ tags: Algorithm
 * [131 Palindrome Partitioning]({{ leetcode }}131.cpp)
 * [211 Add and Search Word - Data structure design]({{ leetcode }}211.cpp)
 * [216 Combination Sum III]({{ leetcode }}216.cpp)
+* [254 Factor Combinations]({{ leetcode }}254.cpp)
+* [267 Palindrome Permutation II]({{ leetcode }}267.cpp)
+* [320 Generalized Abbreviation]({{ leetcode }}320.cpp)
+    * DP or bit manipulation also work.
+* [351 Android Unlock Patterns]({{ leetcode }}351.cpp)
 
 # Linked List
 
-* Special judge for `NULL` list head
+* Special judge for `nullptr` list head
 * General scheme to reverse linked list
-    * `before_head -> head -> end -> after_head`
-    * change `next` pointer in [`head`, `end`] except `head`
-    * special handling when `before_head == head` 
+    * `before -> head`
+    * oldHead = head, head = head-\>next, oldHead-\>next = before, before = oldHead
 
 * [2 Add Two Numbers]({{ leetcode }}2.cpp): Add two numbers represented by linked list.
 * [19 Remove Nth Node From End of List]({{ leetcode }}19.cpp)
@@ -77,6 +84,7 @@ tags: Algorithm
     * O(n) time and O(1) space.
 * [147 Insertion Sort List]({{ leetcode }}147.cpp)
 * [328 Odd Even Linked List]({{ leetcode }}328.cpp)
+* [369 Plus One Linked List]({{ leetcode }}369.cpp)
 
 # Hash Table
 
@@ -85,7 +93,10 @@ tags: Algorithm
 * [36 Valid Sudoku]({{ leetcode }}36.cpp)
 * [128 Longest Consecutive Sequence]({{ leetcode }}128.cpp)
     * Union-find also works.
+* [249 Group Shifted Strings]({{ leetcode }}249.cpp)
 * [299 Bulls and Cows]({{ leetcode }}299.cpp)
+* [325 Maximum Size Subarray Sum Equals k]({{ leetcode }}325.cpp)
+    * Classic prefix-sum.
 * [939 Minimum Area Rectangle]({{ leetcode }}939.cpp): Given (x, y) points, find minimum area of square constructed by four of them.
     * Hashset is faster than O(log(n)) binary search.
 * [966 Vowel Spellchecker]({{ leetcode }}966.cpp)
@@ -109,6 +120,8 @@ tags: Algorithm
 * [76 Minimum Window Substring]({{ leetcode }}76.cpp)
 * [80 Remove Duplicates from Sorted Array II]({{ leetcode }}80.cpp)
 * [209 Minimum Size Subarray Sum]({{ leetcode }}209.cpp)
+* [259 3Sum Smaller]({{ leetcode }}259.cpp)
+    * O(n^2) time by sorting first.
 * [287 Find the Duplicate Number]({{ leetcode }}287.cpp)
     * O(n) time and O(1) space.
 * [392 Is Subsequence]({{ leetcode }}392.cpp)
@@ -127,6 +140,7 @@ tags: Algorithm
 * [49 Group Anagrams]({{ leetcode }}49.cpp)
 * [68 Text Justification]({{ leetcode }}68.cpp)
 * [151 Reverse Words in a String]({{ leetcode }}151.cpp)
+* [161 One Edit Distance]({{ leetcode }}161.cpp)
 * [165 Compare Version Numbers]({{ leetcode }}165.cpp)
 * [227 Basic Calculator II]({{ leetcode }}227.cpp)
 * [937 Reorder Log Files]({{ leetcode }}937.cpp)
@@ -226,6 +240,8 @@ tags: Algorithm
     * In order to make sub-problems well-defined, intervals should be closed.
 * [322 Coin Change]({{ leetcode }}322.cpp)
 * [329 Longest Increasing Path in a Matrix]({{ leetcode }}329.cpp)
+* [333 Largest BST Subtree]({{ leetcode }}333.cpp)
+    * Typical tree DP.
 * [334 Increasing Triplet Subsequence]({{ leetcode }}334.cpp)
     * O(n) time and O(1) space.
 * [338 Counting Bits]({{ leetcode }}338.cpp)
@@ -236,14 +252,23 @@ tags: Algorithm
     * O(n^2) with straightforward solution, but DFS with memo can time out.
     * Easy optimization to O(nlog(n)), like LIS. Mind boundary conditions when sorting.
 * [357 Count Numbers with Unique Digits]({{ leetcode }}357.cpp)
+* [361 Bomb Enemy]({{ leetcode }}361.cpp)
 * [363 Max Sum of Rectangle No Larger Than K]({{ leetcode }}363.cpp)
     * O(n^2 * mlog(m)) time using binary search in prefix sums.
 * [368 Largest Divisible Subset]({{ leetcode }}368.cpp)
 * [377 Combination Sum IV]({{ leetcode }}377.cpp)
+* [446 Arithmetic Slices II - Subsequence]({{ leetcode }}446.cpp)
+    * O(n^2) time.
+* [799 Champagne Tower]({{ leetcode }}799.cpp)
+    * Process rest champagne as a whole.
 * [940 Distinct Subsequences II]({{ leetcode }}940.cpp)
     * O(1) space: iterate on number of subsequences ended with M-th character in alphabet.
 * [964 Least Operators to Express Number]({{ leetcode }}964.cpp)
     * Radix problem.
+* [974 Subarray Sums Divisible by K]({{ leetcode }}974.cpp)
+    * O(n) time by shifting array.
+    * O(n) time by "two sum" of prefix sums. Seems many subarray problems can be done by prefix sum...
+* [975 Odd Even Jump]({{ leetcode }}975.cpp)
 
 # Binary Search
 
@@ -287,6 +312,7 @@ tags: Algorithm
 * [134 Gas Station]({{ leetcode }}134.cpp)
 * [135 Candy]({{ leetcode }}135.cpp)
     * O(n) time and O(1) space.
+* [253 Meeting Rooms II]({{ leetcode }}253.cpp)
 * [321 Create Maximum Number]({{ leetcode }}321.cpp)
 * [330 Patching Array]({{ leetcode }}330.cpp)
     * If \[0, n) is filled, then \[0, n + m) can be filled for any m <= n.
@@ -294,6 +320,7 @@ tags: Algorithm
 * [945 Minimum Increment to Make Array Unique]({{ leetcode }}945.cpp)
 * [948 Bag of Tokens]({{ leetcode }}948.cpp)
 * [968 Binary Tree Cameras]({{ leetcode }}968.cpp)
+    * Typical tree DP.
     * Tree (special graph) covering can be solved by greedy algorithm.
 
 # Math
@@ -306,8 +333,16 @@ tags: Algorithm
     * Be careful with overflow.
 * [223 Rectangle Area]({{ leetcode }}223.cpp)
 * [233 Number of Digit One]({{ leetcode }}233.cpp)
+* [247 Strobogrammatic Number II]({{ leetcode }}247.cpp)
+* [277 Find the Celebrity]({{ leetcode }}277.cpp)
+* [294 Flip Game II]({{ leetcode }}294.cpp)
+    * Non-trivial O(n^2) solution by Sprague-Grundy function.
 * [319 Bulb Switcher]({{ leetcode }}319.cpp)
     * Count divisor numbers.
+* [356 Line Reflection]({{ leetcode }}356.cpp)
+    * O(n) time. The reflection line's x is always (minX + maxX) / 2.
+    * Double precision is not safe?
+* [360 Sort Transformed Array]({{ leetcode }}360.cpp)
 * [372 Super Pow]({{ leetcode }}372.cpp)
     * Use Chinese remainder theorem because 1337 = 7 * 191?
 * [382 Linked List Random Node]({{ leetcode }}382.cpp)
@@ -327,6 +362,8 @@ tags: Algorithm
 
 # Union-Find
 
+* [261 Graph Valid Tree]({{ leetcode }}261.cpp)
+* [323 Number of Connected Components in an Undirected Graph]({{ leetcode }}323.cpp)
 * [947 Most Stones Removed with Same Row or Column]({{ leetcode }}947.cpp)
 * [952 Largest Component Size by Common Factor]({{ leetcode }}952.cpp)
     * O(N*sqrt(W)) time, where W is the maximum value in input array.
@@ -351,10 +388,17 @@ tags: Algorithm
 * [129 Sum Root to Leaf Numbers]({{ leetcode }}129.cpp)
 * [145 Binary Tree Postorder Treversal]({{ leetcode }}199.cpp)
     * Morris Traversal. Reverse of left-right mirrored pre-order is post-order.
+* [156 Binary Tree Upside Down]({{ leetcode }}156.cpp)
 * [199 Binary Tree Right Side View]({{ leetcode }}199.cpp)
 * [236 Lowest Common Ancestor of a Binary Tree]({{ leetcode }}236.cpp)
+* [250 Count Univalue Subtrees]({{ leetcode }}250.cpp)
+* [255 Verify Preorder Sequence in Binary Search Tree]({{ leetcode }}255.cpp)
+    * O(n) time by iterative traversal
+    * O(1) time by mono-stack (this is a binary search tree) and reuse input vector. 
+* [285 Inorder Successor in BST]({{ leetcode }}285.cpp)
 * [297 Serialize and Deserialize Binary Tree]({{ leetcode }}297.cpp)
 * [337 House Robber III]({{ leetcode }}337.cpp)
+* [366 Find Leaves of Binary Tree]({{ leetcode }}366.cpp)
 * [951 Flip Equivalent Binary Trees]({{ leetcode }}951.cpp)
 * [965 Univalued Binary Tree]({{ leetcode }}965.cpp)
 * [971 Flip Binary Tree To Match Preorder Traversal]({{ leetcode }}971.cpp)
@@ -365,7 +409,11 @@ tags: Algorithm
     * O(n) time by direct insert.
 * [148 Sort List]({{ leetcode }}148.cpp)
 * [274 H-Index]({{ leetcode }}274.cpp)
+* [280 Wiggle Sort]({{ leetcode }}280.cpp)
+    * O(n) time by swapping neighbors.
 * [969 Pancake Sorting]({{ leetcode }}969.cpp)
+* [973 K Closest Points to Origin]({{ leetcode }}973.cpp)
+* [976 Largest Perimeter Triangle]({{ leetcode }}976.cpp)
 
 # Bit Manipulation
 
@@ -391,10 +439,13 @@ tags: Algorithm
 * [200 Number of Islands]({{ leetcode }}200.cpp)
 * [207 Course Schedule]({{ leetcode }}207.cpp)
 * [210 Course Schedule II]({{ leetcode }}210.cpp)
+* [286 Walls and Gates]({{ leetcode }}286.cpp)
+    * O(mn), start from all zero points
 * [301 Remove Invalid Parentheses]({{ leetcode }}301.cpp)
     * Caculate redundant left and right brackets first.
 * [332 Reconstruct Itinerary]({{ leetcode }}332.cpp)
     * O(n) time since the problem is finding Eularian path.
+* [364 Nested List Weight Sum II]({{ leetcode }}364.cpp)
 * [386 Lexicographical Numbers]({{ leetcode }}386.cpp)
 * [967 Numbers With Same Consecutive Differences]({{ leetcode }}967.cpp)
 
@@ -416,9 +467,19 @@ tags: Algorithm
 # Design
 
 * [146 LRU Cache]({{ leetcode }}146.cpp)
+* [244 Shortest Word Distance II]({{ leetcode }}244.cpp)
+* [251 Flatten 2D Vector]({{ leetcode }}251.cpp)
+* [271 Encode and Decode Strings]({{ leetcode }}271.cpp)
+* [281 Zigzag Iterator]({{ leetcode }}281.cpp)
 * [284 Peeking Iterator]({{ leetcode }}284.cpp)
     * Create a temporary iterator and fint its next.
     * Cache next element.
+* [288 Unique Word Abbreviation]({{ leetcode }}288.cpp)
+* [348 Design Tic-Tac-Toe]({{ leetcode }}348.cpp)
+    * O(1) time for each move and O(n) space.
+* [353 Design Snake Game]({{ leetcode }}353.cpp)
+* [362 Design Hit Counter]({{ leetcode }}362.cpp)
+    * O(1) time for both operations.
 * [380 Insert Delete GetRandom O(1)]({{ leetcode }}380.cpp)
 * [381 Insert Delete GetRandom O(1) - Duplicates allowed]({{ leetcode }}381.cpp)
 
