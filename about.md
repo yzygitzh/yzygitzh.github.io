@@ -4,12 +4,18 @@ title: About
 permalink: /about/
 ---
 
-This is the base Jekyll theme. You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](https://jekyllrb.com/)
+I'm Ziyue Yang, a master student majoring in computer science, in Peking University.
 
-You can find the source code for the Jekyll new theme at:
-{% include icon-github.html username="jekyll" %} /
-[minima](https://github.com/jekyll/minima)
+My advisor is [Yao Guo](http://sei.pku.edu.cn/~yaoguo/). My research interests are mobile systems, mobile app analysis, etc. I've got several publications:
 
-You can find the source code for Jekyll at
-{% include icon-github.html username="jekyll" %} /
-[jekyll](https://github.com/jekyll/jekyll)
+* Li, Y.\*, __Yang, Z.\*__, Guo, Y., Chen, X. _A Deep Learning based Approach to Automated Android App Testing._ __(arXiv pre-print, Full Paper)__ (*: Co-primary authors) [PDF](https://arxiv.org/pdf/1901.02633)
+
+* Li, Y., __Yang, Z.__, Guo, Y., Chen, X., Agarwal Y., & Hong J.I. _Automated Extraction of Personal Knowledge from Smartphone Push Notifications._ __(IEEE BigData’18, Full Paper)__ [PDF]({{ site.url }}/assets/papers/ziyue_yang_bigdata_2018.pdf)
+
+* Guo, Y., Li, Y., __Yang, Z.__, & Chen, X. _What's inside your app?: Understanding Feature Redundancy in Mobile Apps._ __(IEEE ICPC’18, Full Paper)__ [PDF]({{ site.url }}/assets/papers/ziyue_yang_icpc_2018.pdf)
+
+* __Yang, Z.__, Li, Y., Guo, Y., & Chen, X. _UBAC: UI-Based Fine-Grained Access Control on Android._ __(SOSP’17, Poster)__ [PDF]({{ site.url }}/assets/papers/ziyue_yang_sosp_2017.pdf)
+
+* Li, Y., __Yang, Z.__, Guo, Y., & Chen, X. _DroidBot: a lightweight UI-guided test input generator for Android._ __(ICSE’17, Demo Track)__ [PDF]({{ site.url }}/assets/papers/ziyue_yang_icse_2017.pdf)
+
+
