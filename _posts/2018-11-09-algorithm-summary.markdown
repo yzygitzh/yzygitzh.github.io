@@ -7,6 +7,7 @@ tags: Algorithm
 ---
 
 {% assign usaco = "https://github.com/yzygitzh/oj_solutions/tree/master/usaco/src/" %}
+{% assign poj = "https://github.com/yzygitzh/oj_solutions/tree/master/poj/src/" %}
 
 # Advanced Algorithms
 
@@ -57,10 +58,13 @@ tags: Algorithm
 * [USACO Mixing Milk]({{ usaco }}milk.cpp): Fraction knapsack.
 * [USACO Barn Repair]({{ usaco }}barn1.cpp): Cover P points within L lines with minimum total length.
 * [USACO Job Processing]({{ usaco }}job.cpp): Minimize the time of 2-phase jobs flowing through M1 phase-1 machines and M2 phase-2 machines, with different job processing times.
+* [POJ 1328 Radar Installation]({{ poj }}1328.cpp): Interval coverage.
+* [POJ 2586 Y2K Accounting Bug]({{ poj }}2586.cpp)
 
 # Graph
 
 * Shortest Path
+    * Bellman-Ford
     * Dijkstra
     * Floyd
     * [USACO Bessie Come Home]({{ usaco }}comehome.cpp)
@@ -68,6 +72,8 @@ tags: Algorithm
     * [USACO Sweet Butter]({{ usaco }}butter.cpp)
     * [USACO Camelot]({{ usaco }}camelot.cpp): Modified BFS. Nice sub-problem definition in USACO analysis!
     * [USACO Fence Loops]({{ usaco }}fence6.cpp): Find smallest perimeter of a weighted graph.
+    * [POJ 1860 Currency Exchange]({{ poj }}1860.cpp)
+    * [POJ 3259 Wormholes]({{ poj }}3259.cpp)
 
 * Eularian Path
     * Fleury
@@ -96,6 +102,8 @@ tags: Algorithm
 
 # Math
 
+* High Precision
+    * [POJ 2109 Power of Cryptography]({{ poj }}2109.cpp): Need constant optimization. 
 * Mini-Max Search
     * [USACO A Game]({{ usaco }}game1.cpp): Two players fetch numbers from two ends of a sequence for maximum sum.
 
@@ -105,6 +113,7 @@ tags: Algorithm
 
 * Construction
     * [USACO Sorting a Three-Valued Sequence]({{ usaco }}sort3.cpp): Construct an optimized swapping solution to sort 1, 2, 3s.
+    * [POJ 3295 Tautology]({{ poj }}3295.cpp)
 * Emulation
     * [USACO Your Ride is Here]({{ usaco }}ride.cpp)
     * [USACO Greedy Gift Givers]({{ usaco }}gift1.cpp)
@@ -119,6 +128,11 @@ tags: Algorithm
     * [USACO Spinning Wheels]({{ usaco }}spin.cpp)
     * [USACO Magic Squares]({{ usaco }}msquare.cpp)
     * [USACO Starry Night]({{ usaco }}starry.cpp)
+    * [POJ 1068 Parencodings]({{ poj }}1068.cpp)
+    * [POJ 1573 Robot Motion]({{ poj }}1573.cpp)
+    * [POJ 2632 Crashing Robots]({{ poj }}2632.cpp)
+    * [POJ 2993 Emag eht htiw Em Pleh]({{ poj }}2993.cpp)
+    * [POJ 2996 Help Me with the Game]({{ poj }}2996.cpp)
 * Enumeration
     * [USACO Palindromic Squares]({{ usaco }}palsquare.cpp)
     * [USACO Dual Palindromes]({{ usaco }}dualpal.cpp)
@@ -137,6 +151,8 @@ tags: Algorithm
     * [USACO Humble Numbers]({{ usaco }}humble.cpp): Given N primes, find the Kth largest product produced by them.
     * [USACO Contact]({{ usaco }}contact.cpp): Find substrings with top-K appearance.
     * [USACO Feed Ratios]({{ usaco }}ratios.cpp)
+    * [POJ 1753 Flip Game]({{ poj }}1753.cpp)
+    * [POJ 2965 The Pilots Brothers' Refrigerator]({{ poj }}2965.cpp): Need constant optimization.
 * Divide & Conquer
     * [USACO Ordered Fractions]({{ usaco }}frac1.cpp): Print all fractions represented by 1...N. Simple enumeration worked well. (Faster solution: if n1/n2 <= d1/d2, then n1/n2 <= (n1+d1)/(d1+d2) <= d1/d2)
     * [USACO American Heritage]({{ usaco }}heritage.cpp): Given in-order and pre-order, print post-order
