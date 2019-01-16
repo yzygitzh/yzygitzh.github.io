@@ -8,6 +8,11 @@ tags: Algorithm
 
 {% assign leetcode = "https://github.com/yzygitzh/oj_solutions/tree/master/leetcode/src/" %}
 
+# Important mind tags
+
+* Prefix-sum
+* Greedy by sorting
+
 # Array
 
 * [31 Next Permutation]({{ leetcode }}31.cpp)
@@ -29,6 +34,9 @@ tags: Algorithm
     * Each time throw k different elements.
 * [245 Shortest Word Distance III]({{ leetcode }}245.cpp)
 * [289 Game of Life]({{ leetcode }}289.cpp)
+* [311 Sparse Matrix Multiplication]({{ leetcode }}311.cpp)
+    * Given two sparse matrices, multiply them.
+    * O(mne) time where m and n is the result matrix's dimensions and e is related to sparsity. Convert rows and columns into (number, index) pairs and multiply them.
 * [950 Reveal Cards In Increasing Order]({{ leetcode }}950.cpp)
 * [961 N-Repeated Element in Size 2N Array]({{ leetcode }}961.cpp)
     * Boyer Moore Vote.
@@ -244,12 +252,23 @@ tags: Algorithm
     * Typical tree DP.
 * [334 Increasing Triplet Subsequence]({{ leetcode }}334.cpp)
     * O(n) time and O(1) space.
+* [335 Self Crossing]({{ leetcode }}335.cpp)
+    * A point is moving in a cartesian coordinate system with [up, left, down, right] loops. Check whether the point will head into its own trail.
+    * O(n) time by summarizing the problem into three cases:
+
+            Case A: ----    Case B: ----    Case C: ----
+                    |  |            |  |            |  |
+                    -->S            |  S            |  S<--
+                                    |  ^            |     |
+                                    |  |            -------
+                                    ----
+
 * [338 Counting Bits]({{ leetcode }}338.cpp)
     * O(n) time (no O(n) * sizeof(int)).
 * [343 Integer Break]({{ leetcode }}343.cpp)
     * O(log(n)) time using math. Break the number into 3's as many as possible.
 * [354 Russian Doll Envelops]({{ leetcode }}354.cpp)
-    * O(n^2) with straightforward solution, but DFS with memo can time out.
+    * O(n^2) with straightforward DFS solution, but DFS with memo can time out.
     * Easy optimization to O(nlog(n)), like LIS. Mind boundary conditions when sorting.
 * [357 Count Numbers with Unique Digits]({{ leetcode }}357.cpp)
 * [361 Bomb Enemy]({{ leetcode }}361.cpp)
@@ -359,6 +378,8 @@ tags: Algorithm
 # Divide and Conquer
 
 * [241 Different Ways to Add Parentheses]({{ leetcode }}241.cpp)
+* [395 Longest Substring with At Least K Repeating Characters]({{ leetcode }}395.cpp)
+    * O(n) time, recursively expell letters with count less than target.
 
 # Union-Find
 
@@ -397,6 +418,17 @@ tags: Algorithm
     * O(1) time by mono-stack (this is a binary search tree) and reuse input vector. 
 * [285 Inorder Successor in BST]({{ leetcode }}285.cpp)
 * [297 Serialize and Deserialize Binary Tree]({{ leetcode }}297.cpp)
+* [298 Binary Tree Longest Consecutive Sequence]({{ leetcode }}298.cpp)
+    * Given a binary tree, find the length of longest consecutive sequence going from up to down.
+    * O(n) time, simple tree DP.
+* [314 Binary Tree Vertical Order Traversal]({{ leetcode }}314.cpp)
+    * Given a binary tree, output its vertical order traversal. For example:
+      
+                2
+              3   4    => 1 3 2 5 0 4 6
+            1  5|0  6
+
+    * Traverse the tree and emit (node, position) pairs. O(n) time can be achieved if using hashmap.
 * [337 House Robber III]({{ leetcode }}337.cpp)
 * [366 Find Leaves of Binary Tree]({{ leetcode }}366.cpp)
 * [951 Flip Equivalent Binary Trees]({{ leetcode }}951.cpp)
@@ -408,9 +440,17 @@ tags: Algorithm
 * [57 Insert Interval]({{ leetcode }}57.cpp)
     * O(n) time by direct insert.
 * [148 Sort List]({{ leetcode }}148.cpp)
+* [179 Largest Number]({{ leetcode }}179.cpp)
+    * Given a list of non-negative integers, concatenate them into the largest number.
+    * O(nlog(n)) time by custom sorting. For any two numbers, compare which should be the first to form a larger number when they form a new number. For example, 30\|309 vs. 309\|30.
+    * NOTE that this problem satisfies that swapping adjacent elements doesn't affect other elements. This means that any answer can be optimized into the optimal one by swapping neighbors. Such problems can be solved by defining custom comparators.
 * [274 H-Index]({{ leetcode }}274.cpp)
 * [280 Wiggle Sort]({{ leetcode }}280.cpp)
     * O(n) time by swapping neighbors.
+* [370 Range Addition]({{ leetcode }}370.cpp)
+    * Given a range [0, n] and several range updates, give final values of all points.
+    * O(nlog(n)) time by sorting the ranges and line sweeping.
+    * O(n) time by changing range bounds and using prefix sum.
 * [969 Pancake Sorting]({{ leetcode }}969.cpp)
 * [973 K Closest Points to Origin]({{ leetcode }}973.cpp)
 * [976 Largest Perimeter Triangle]({{ leetcode }}976.cpp)
@@ -480,6 +520,7 @@ tags: Algorithm
 * [353 Design Snake Game]({{ leetcode }}353.cpp)
 * [362 Design Hit Counter]({{ leetcode }}362.cpp)
     * O(1) time for both operations.
+* [379 Design Phone Directory]({{ leetcode }}379.cpp)
 * [380 Insert Delete GetRandom O(1)]({{ leetcode }}380.cpp)
 * [381 Insert Delete GetRandom O(1) - Duplicates allowed]({{ leetcode }}381.cpp)
 
@@ -489,4 +530,8 @@ tags: Algorithm
 * [315 Count of Smaller Numbers After Self]({{ leetcode }}315.cpp)
     * Instrumented merge sort also do.
     * Maintain a sorted array and do binary search in it also do.
+* [391 Perfect Rectangle]({{ leetcode }}391.cpp)
+    * Check whether several small rectangles exactly merge into a bigger one.
+    * O(nlog(n)) time by line sweeping and segment tree.
+    * O(n) by counting corners.
 
