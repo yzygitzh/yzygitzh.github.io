@@ -143,6 +143,7 @@ General framework for combaination problems:
     * L(1)-\>L(2)->...-\>L(n-1)-\>L(n) => L(1)-\>L(3)-\>...L(2)-\>L(4)...
     * O(n) time and in place. Invariant: odd-even list + origin list.
 * [369 Plus One Linked List]({{ leetcode }}369.cpp)
+* [445 Add Two Numbers II]({{ leetcode }}445.cpp)
 
 # Hash Table
 
@@ -232,6 +233,8 @@ Two pointers sometimes is an implementation of mono-stack or mono-queue. Mono he
 * [165 Compare Version Numbers]({{ leetcode }}165.cpp)
 * [227 Basic Calculator II]({{ leetcode }}227.cpp)
     * Evaluate expression without parentheses.
+* [418 Sentence Screen Fitting]({{ leetcode }}418.cpp)
+    * Similar to text justification. Need to find end-position circles.
 * [937 Reorder Log Files]({{ leetcode }}937.cpp)
 
 # Heap
@@ -288,6 +291,8 @@ Two pointers sometimes is an implementation of mono-stack or mono-queue. Mono he
 * [388 Longest Absolute File Path]({{ leetcode }}388.cpp)
 * [394 Decode String]({{ leetcode }}394.cpp)
     * Decode strings like "3[a2[c]]" -\> accaccacc.
+* [402 Remove K Digits]({{ leetcode }}402.cpp)
+    * Simplified Create Maximum Number on a single number.
 * [946 Validate Stack Sequences]({{ leetcode }}71.cpp)
     * O(n) space by stack emulation, O(1) space reuse input.
 
@@ -323,6 +328,8 @@ Note: for dense problems, search with memo is much slower (~10x) than DP.
             Bound: F[0][N], true for N == 0 and prefix stars.
 
     * There is also an O(n) time and O(1) space greedy solution, greedily matches strings containing \'a-z\' and \'?\' since \'\*\' can match anything.
+* [53 Maximum Subarray]({{ leetcode }}53.cpp)
+    * O(n) time and O(1) space.
 * [62 Unique Paths]({{ leetcode }}62.cpp)
     * Going from left-up to right-down.
     * O(mn) time, classical 2D/0D. O(min(m, n)) time if calculate (m + n, n), mind overflow.
@@ -486,6 +493,9 @@ Note: for dense problems, search with memo is much slower (~10x) than DP.
 * [474 Ones and Zeroes]({{ leetcode }}474.cpp)
     * Given a list like ["01","110","1","0"] and m \'0\' and n\'1\', calculate maximum number of elements constructable.
     * O(mnl) time. Classical 0-1 knapsack.
+* [494 Target Sum]({{ leetcode }}494.cpp)
+    * Given a number list, one can change their signs, find number of ways to sum to target.
+    * O(2000n) time DP, for the sum of elements will not exceed 1000.
 * [799 Champagne Tower]({{ leetcode }}799.cpp)
     * Treat rest champagne as a whole.
 * [940 Distinct Subsequences II]({{ leetcode }}940.cpp)
@@ -512,6 +522,11 @@ Note: for dense problems, search with memo is much slower (~10x) than DP.
 * [975 Odd Even Jump]({{ leetcode }}975.cpp)
     * Odd index jump to nearest non-less number, even index jump to nearest non-greater number. Find indices where end is reachable.
     * O(nlog(n)) time, binary search for valid index.
+* [978 Longest Turbulent Subarray]({{ leetcode }}978.cpp)
+    * Find length of longest subarray such that A[i]\<A[i+1]\>A[i+2]... for odd i and vice versa for even i.
+* [979 Distribute Coins in Binary Tree]({{ leetcode }}979.cpp)
+    * Given a tree and coins on nodes. There are in total N coins and nodes. Find minimum steps to make 1 node 1 coin.
+    * Tree DP. For each node return its subtree's redundant coins.
 
 # Binary Search
 
@@ -555,6 +570,7 @@ Note: for dense problems, search with memo is much slower (~10x) than DP.
     * Save count in node to keep log(n) query time.
 * [352 Data Stream as Disjoint Intervals]({{ leetcode }}352.cpp)
     * Given number stream, merge them into intervals.
+* [450 Delete Node in a BST]({{ leetcode }}450.cpp)
 * [938 Range Sum of BST]({{ leetcode }}938.cpp)
 
 # Greedy
@@ -589,6 +605,10 @@ Two kinds of greedy policy: proovable by swapping or proovable by math induction
 * [392 Is Subsequence]({{ leetcode }}392.cpp)
     * Given S and T, judge whether T is a subsequence of S.
     * Follow up: lots of queries. Store T's chracters' indices and use binary search.
+* [406 Queue Reconstruction by Height]({{ leetcode }}406.cpp)
+    * Given (h, k) pairs, k is the number of higher people before self, reconstruct the queue.
+    * When h is same, smaller k is better. When k is same, smaller h is better. Greedily choose lowest valid element. Use BIT to save how many pairs before are higher.
+    * This is a swap-invariant problem.
 * [945 Minimum Increment to Make Array Unique]({{ leetcode }}945.cpp)
     * Given an array, calculate minimum steps to make elements in A unique by incrementing elements.
     * O(n) time by greedily assigning lowest holes.
@@ -658,6 +678,11 @@ Game theory: mini-max, NIM problem, Sprague-Grundy function, etc.
     * Each time all a mod b (b is 2^n) is eliminated. Infer "a" each time.
 * [396 Rotate Function]({{ leetcode }}396.cpp)
     * Given A, Bk is A's rotation, find maximum F(k) = 0 * Bk[0] + 1 * Bk[1] + ... + (n-1) * Bk[n-1]
+* [398 Random Pick Index]({{ leetcode }}398.cpp)
+    * Use map + rand or origin vector + reservior sampling.
+* [470 Implement Rand10() Using Rand7()]({{ leetcode }}470.cpp)
+    * Rejection sampling. Pitfall: don't use rand7() * rand7(), use 7 * rand7() + rand7() instead.
+    * Can re-use redundant digits in next rejection sampling.
 * [949 Largest Time for Given Digits]({{ leetcode }}949.cpp)
     * Given four digits, make up largest HH:MM time.
 * [963 Minimum Area Rectangle II]({{ leetcode }}963.cpp)
@@ -667,6 +692,7 @@ Game theory: mini-max, NIM problem, Sprague-Grundy function, etc.
 * [972 Equal Rational Numbers]({{ leetcode }}972.cpp)
     * Given two rational numbers (like 7.3(9) == 7.4), judge whether they'are equal.
     * Shorten cycling part, then shorten fractional part, then process (9) case.
+* [977 Squares of a Sorted Array]({{ leetcode }}977.cpp)
 
 # Divide and Conquer
 
@@ -790,6 +816,7 @@ Some sequences satisfy that swapping adjacent elements doesn't affect other elem
     * Given a range [0, n] and several range updates, give final values of all points.
     * O(nlog(n)) time by sorting the ranges and line sweeping.
     * O(n) time and O(1) space by changing range bounds and using prefix sum.
+* [451 Sort Characters By Frequency]({{ leetcode }}451.cpp)
 * [969 Pancake Sorting]({{ leetcode }}969.cpp)
     * Sort an array by reversing its prefixes.
     * The minimum number question is NP-hard. See [Wikipedia](https://en.wikipedia.org/wiki/Pancake_sorting)
@@ -820,23 +847,37 @@ Some sequences satisfy that swapping adjacent elements doesn't affect other elem
 * [51 N-Queens]({{ leetcode }}51.cpp)
 * [52 N-Queens II]({{ leetcode }}52.cpp)
 * [127 Word Ladder]({{ leetcode }}127.cpp)
+    * Given equal-length word list and beginWord and endWord, find minimum steps to change beginWord to endWord. Each change is at most one character.
 * [130 Surrounded Regions]({{ leetcode }}130.cpp)
+    * Given grids filled by X and O, turn all surrounded O into X.
 * [133 Clone Graph]({{ leetcode }}133.cpp)
+    * Deep copy a graph.
 * [200 Number of Islands]({{ leetcode }}200.cpp)
+    * Flood filling.
 * [207 Course Schedule]({{ leetcode }}207.cpp)
 * [210 Course Schedule II]({{ leetcode }}210.cpp)
+    * Topological sort.
 * [286 Walls and Gates]({{ leetcode }}286.cpp)
-    * O(mn), start from all zero points
+    * Given grids made by walls, gates and empty room, fill each room with shortest path length to any gate.
+    * O(mn), start from all zero points.
 * [301 Remove Invalid Parentheses]({{ leetcode }}301.cpp)
-    * Caculate redundant left and right brackets first.
+    * Caculate invalid left and right brackets first by simple scanning. Then brute force DFS.
 * [332 Reconstruct Itinerary]({{ leetcode }}332.cpp)
     * O(n) time since the problem is finding Eularian path.
 * [364 Nested List Weight Sum II]({{ leetcode }}364.cpp)
+    * Given a nested list, find weighted sum of all nodes. Weight is depth.
 * [386 Lexicographical Numbers]({{ leetcode }}386.cpp)
+    * Generate lexicographical ordered number list from 1 to n.
+    * Do multiply 10 or plus one each time. After plus one, remove trailing zeros.
 * [397 Integer Replacement]({{ leetcode }}397.cpp)
     * Given a number n, if n is even can do n >> 1, else can do n+1 or n-1. Find least step to 1.
     * Simple BFS.
+* [417 Pacific Atlantic Water Flow]({{ leetcode }}417.cpp)
+    * Given a grid, water flows to non-greater grids. Find all grids that can flow to both up-left and right-down.
+    * Simple BFS. Memo search is not valid because states are not strictly mono.
 * [967 Numbers With Same Consecutive Differences]({{ leetcode }}967.cpp)
+* [980 Unique Paths III]({{ leetcode }}980.cpp)
+    * Hamiltonian path.
 
 # Graph
 
@@ -860,6 +901,8 @@ Some sequences satisfy that swapping adjacent elements doesn't affect other elem
     * Given a word list, find all word pairs that can be combined into a palindrome.
     * O(nk^2) time, using trie to find the other end of a palindrome.
     * Use hashset to find also works.
+* [421 Maximum XOR of Two Numbers in an Array]({{ leetcode }}421.cpp)
+    * O(n) time, DFS on trie.
 
 # Design
 
