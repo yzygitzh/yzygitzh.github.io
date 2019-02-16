@@ -63,6 +63,8 @@ Prefix-sum can solve many subarray related problems.
     * O(nlog(n)), prefix-min.
 * [985 Sum of Even Numbers After Queries]({{ leetcode }}985.cpp)
     * Keep track of even numbers only.
+* [989 Add to Array-Form of Integer]({{ leetcode }}989.cpp)
+    * Add two array-form integers.
 
 # Backtracking
 
@@ -252,9 +254,16 @@ Two pointers sometimes is an implementation of mono-stack or mono-queue. Mono he
 * [481 Magical String]({{ leetcode }}481.cpp)
     * Build recursive string: 1221121... -\> 1 22 11 2 1 -\> 12211...
     * Generate string according to its prefix.
+* [828 Unique Letter String]({{ leetcode }}828.cpp)
+    * Define UNIQ(s) is the number of unique letters in a string. Find sum of UNIQ of all substrings of S.
+    * At each step, calculate UNIQ of substrings ending by that character. Maintain a character index map.
+* [904 Fruit Into Baskets]({{ leetcode }}904.cpp)
+    * Find longest subarray with at most 2 distinct numbers.
 * [986 Interval List Intersections]({{ leetcode }}986.cpp)
     * Given two non-intersect interval lists, calculate their intersected result.
     * Merge sort. Always throw the interval with lower end and keep the rest interval.
+* [992 Subarrays with K Different Integers]({{ leetcode }}992.cpp)
+    * Prefix-sum-like method, Find number of subarrays with AT MOST K different integers.
 
 # String
 
@@ -274,11 +283,11 @@ while (i < p.length()) {
     if (p[i] == p[k]) next[i] = next[k];
     else next[i] = k;
 }
-// match
+// match, nearly the same with next calculation
 i = 0, k = 0;
 while (i < s.length() && k < p.length()) {
-    if (k < 0 || s[i] == p[k]) i++, k++;
-    else k = next[k];
+    while (k >= 0 && p[i] == p[k]) k = next[k];
+    i++, k++;
 }
 {% endhighlight %}
 
@@ -343,6 +352,8 @@ while (i < s.length() && k < p.length()) {
     * O(mnlog(mn)) time, each time floodfill from lowest grid that cannot trap any water. The cannot-trap set is maintained by a heap.
 
 # Stack
+
+Mono stack/queue can maintain min/max in average O(1) time, get in strict O(1) time.
 
 * [32 Longest Valid Parentheses]({{ leetcode }}32.cpp)
     * O(n) time, expand by context free grammar: \<exp\> = (\<exp\>) \| \<exp\>\<exp\> \| null
@@ -601,6 +612,8 @@ Note: for dense problems, search with memo is much slower (~10x) than DP.
     * O(2000n) time DP, for the sum of elements will not exceed 1000.
 * [799 Champagne Tower]({{ leetcode }}799.cpp)
     * Treat rest champagne as a whole.
+* [879 Profitable Schemes]({{ leetcode }}879.cpp)
+    * Multi-dimension 0/1 knapsack. DP on range instead of exact number, mind boundary condition.
 * [940 Distinct Subsequences II]({{ leetcode }}940.cpp)
     * Given a sequence, find number of distinct subsequences.
     * O(26n) time and O(26) space: iterate on number of subsequences ended with M-th character in alphabet.
@@ -763,6 +776,13 @@ Two kinds of greedy policy: proovable by swapping or proovable by math induction
 * [495 Teemo Attacking]({{ leetcode }}495.cpp)
     * Teemo attack at several time points and have poison buff. Calculate total buff time.
     * O(n) time and O(1) space, check at each timepoint whether the poison can last to the next.
+* [621 Task Scheduler]({{ leetcode }}621.cpp)
+    * Given tasks, the machine must take a rest of L time units between two same tasks, find the minimum working time.
+    * O(time) time, greedily choose task with most remaining. Can be optimized to O(n) if skip spare window.
+* [871 Minimum Number of Refueling Stops]({{ leetcode }}871.cpp)
+    * There are some gas station with limited gas G[i]. Find minimum number of refueling stops to reach the end.
+    * O(n^2) time by DP on maximum gas remaining with first M stations and N refuelings.
+    * O(nlog(n)) time by greedily choose maximum G[i] in reachable range.
 * [945 Minimum Increment to Make Array Unique]({{ leetcode }}945.cpp)
     * Given an array, calculate minimum steps to make elements in A unique by incrementing elements.
     * O(n) time by greedily assigning lowest holes.
@@ -783,6 +803,10 @@ Fisher-Yates algorithm: Each time select one element from rest K elements. Selec
 
 Game theory: mini-max, NIM problem, Sprague-Grundy function, etc.
 
+Expanded Euclid algorithm.
+
+Sieve of Eratosthenes, Miller Rabin.
+
 * [7 Reverse Integer]({{ leetcode }}7.cpp)
     * Mind overflow!
 * [9 Palindrome Number]({{ leetcode }}9.cpp)
@@ -794,6 +818,10 @@ Game theory: mini-max, NIM problem, Sprague-Grundy function, etc.
 * [166 Fraction to Recurring Decimal]({{ leetcode }}166.cpp)
     * Given x/y representation, calculate recurring decimal representation.
     * Be careful with overflow.
+* [204 Count Primes]({{ leetcode }}204.cpp)
+    * Given n, count how many primes there are from 1 to n.
+    * Sieve of Eratosthenes, erase ik, stop at i = sqrt(n).
+    * Miller-Rabin.
 * [223 Rectangle Area]({{ leetcode }}223.cpp)
     * Given two rectangles, find overall area.
     * Similar to a problem in USACO training, cut the other rectangle from up, down, left, right.
@@ -821,6 +849,10 @@ Game theory: mini-max, NIM problem, Sprague-Grundy function, etc.
 * [360 Sort Transformed Array]({{ leetcode }}360.cpp)
     * Given f(x) = ax^2 + bx + c and a sorted array, given the sorted array mapped by f.
     * Find the root.
+* [365 Water and Jug Problem]({{ leetcode }}365.cpp)
+    * Given two jugs with volume a and b, find whether water volume c can be measured.
+    * Equivalant to solve ax + by = c (expand euclid algorithm), with a + b >= c.
+    * x < 0 && y > 0: fill a with b, and pour a once full, vice versa.
 * [372 Super Pow]({{ leetcode }}372.cpp)
     * Caculate a^b mod 1337, where b is very large.
     * Use Chinese remainder theorem because 1337 = 7 * 191?
@@ -865,6 +897,18 @@ Game theory: mini-max, NIM problem, Sprague-Grundy function, etc.
     * Typicial minimax.
 * [497 Random Point in Non-overlapping Rectangles]({{ leetcode }}497.cpp)
     * Area-weighted probability. Why only upper\_bound works?
+* [812 Largest Triangle Area]({{ leetcode }}812.cpp)
+    * Given points, find maximum area of triangle formed by any of them.
+    * Heron's formula: S = sqrt(p(p-a)(p-b)(p-c)).
+* [878 Nth Magical Number]({{ leetcode }}878.cpp)
+    * Given A and B, find k-th smallest number divisible by A or B.
+    * Binary search on n\*A array.
+* [891 Sum of Subsequence Widths]({{ leetcode }}891.cpp)
+    * Given a number array, find sum of all (max-min) of subsequences.
+    * Sort and count neighbor coverage times. It's all about power of twos.
+* [899 Orderly Queue]({{ leetcode }}899.cpp)
+    * Given a string, one can move any character in prefix of length N to the end of the string. Find the lexicographically minimum string reachable.
+    * When N>=2, this is a insertion sort.
 * [949 Largest Time for Given Digits]({{ leetcode }}949.cpp)
     * Given four digits, make up largest HH:MM time.
 * [963 Minimum Area Rectangle II]({{ leetcode }}963.cpp)
@@ -875,6 +919,9 @@ Game theory: mini-max, NIM problem, Sprague-Grundy function, etc.
     * Given two rational numbers (like 7.3(9) == 7.4), judge whether they'are equal.
     * Shorten cycling part, then shorten fractional part, then process (9) case.
 * [977 Squares of a Sorted Array]({{ leetcode }}977.cpp)
+* [991 Broken Calculator]({{ leetcode }}991.cpp)
+    * Given X and Y, one can do -1 and \*2 to X, find minimum steps to Y.
+    * Consider convert Y to X by doing +1 and /2. Greedily do /2 when even, +1 when odd.
 
 # Divide and Conquer
 
@@ -891,12 +938,16 @@ Game theory: mini-max, NIM problem, Sprague-Grundy function, etc.
     * Islands are popping out of a grid sea. Give number of islands after each popping.
     * Maintain a parent set, do erase and insert during each union.
 * [323 Number of Connected Components in an Undirected Graph]({{ leetcode }}323.cpp)
+* [803 Bricks Falling When Hit]({{ leetcode }}803.cpp)
+    * Reverse-time union-find.
 * [947 Most Stones Removed with Same Row or Column]({{ leetcode }}947.cpp)
     * Given stones on a 2D plane, one can remove a stone if there are other stones sharing the same row or column. Find maximum removes.
     * Union points by row or column.
 * [952 Largest Component Size by Common Factor]({{ leetcode }}952.cpp)
     * Find the largest connected component of a graph, where there is an edge if two nodes share a common factor > 1.
     * O(N\*sqrt(W)) time, where W is the maximum value in input array.
+* [990 Satisfiability of Equality Equations]({{ leetcode }}952.cpp)
+    * Given equations like a==b, b!=c, a==c, find whether the equation set is satisfiable.
 
 # Tree
 
@@ -913,10 +964,10 @@ Stack-Based Iterative Traversal
         p = stack.top()
         if (p->right != nullptr)
             p = p->right
-            while (p != nullptr) push p, update p as p->left;
+            while (p != nullptr) push p, update p as p->left; # get smallest
         else
             pop stack
-            while (stack top's left is p) update p, pop stack;
+            while (stack top's right is p) update p, pop stack; # while largest
 
 * [94 Binary Tree Inorder Traversal]({{ leetcode }}94.cpp)
 * [98 Validate Binary Search Tree]({{ leetcode }}98.cpp)
@@ -1210,6 +1261,7 @@ Some sequences satisfy that swapping adjacent elements doesn't affect other elem
 * [288 Unique Word Abbreviation]({{ leetcode }}288.cpp)
 * [341 Flatten Nested List Iterator]({{ leetcode }}341.cpp)
     * hasNext and next. Use stack to store iterators.
+* [346 Moving Average from Data Stream]({{ leetcode }}346.cpp)
 * [348 Design Tic-Tac-Toe]({{ leetcode }}348.cpp)
     * O(1) time for each move and O(n) space. Save rowCount, colCount and crossCount.
 * [353 Design Snake Game]({{ leetcode }}353.cpp)
