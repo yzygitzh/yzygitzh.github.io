@@ -20,6 +20,7 @@ Prefix-sum can solve many subarray related problems.
     * Return matrix elements in spiral order.
 * [59 Spiral Matrix II]({{ leetcode }}59.cpp)
     * Fill matrix in spiral order.
+* [66 Plus One]({{ leetcode }}66.cpp)
 * [73 Set Matrix Zeros]({{ leetcode }}73.cpp)
     * Given a matrix, if there is a zero, it's row and column are set to zero.
     * O(mn) time and O(1) space. Save tainted rows/cols in 0 row/col, and record whether 0 row/col is cleared.
@@ -39,6 +40,8 @@ Prefix-sum can solve many subarray related problems.
 * [245 Shortest Word Distance III]({{ leetcode }}245.cpp)
     * Given word list and two words, find minimum distance of their indices.
     * O(n) time and O(1) space, simple scan through.
+* [283 Move Zeros]({{ leetcode }}283.cpp)
+    * Given a array containing zeros, move these zeros to the end of the array.
 * [289 Game of Life]({{ leetcode }}289.cpp)
     * Emulate a game of life grid.
 * [311 Sparse Matrix Multiplication]({{ leetcode }}311.cpp)
@@ -55,6 +58,11 @@ Prefix-sum can solve many subarray related problems.
     * O(n) time and O(1) space, scan through 1 strings and try to connect 0-connecte ones.
 * [498 Diagonal Traverse]({{ leetcode }}498.cpp)
     * Walk matrix (0,0), (0,1), (1,0), (2,0), (1,1), (0,2), ...
+* [531 Lonely Pixel I]({{ leetcode }}531.cpp)
+    * Given W-B matrix, find number of B's that there is no other B in the same row or column.
+* [533 Lonely Pixel II]({{ leetcode }}533.cpp)
+    * Given W-B matrix and K, find number of B's that 1) there is exactly K B's in the same row and column, and 2) for all rows that have B at column C, they should be exactly the same with current row.
+    * Put same rows in one group, then check each column.
 * [950 Reveal Cards In Increasing Order]({{ leetcode }}950.cpp)
 * [961 N-Repeated Element in Size 2N Array]({{ leetcode }}961.cpp)
     * Boyer Moore Vote.
@@ -65,6 +73,11 @@ Prefix-sum can solve many subarray related problems.
     * Keep track of even numbers only.
 * [989 Add to Array-Form of Integer]({{ leetcode }}989.cpp)
     * Add two array-form integers.
+* [995 Minimum Number of K Consecutive Bit Flips]({{ leetcode }}995.cpp)
+    * Given a 0-1 array, one can flip a consecutive K bits at a time. Find minimum flip steps to make all elements 1.
+    * O(n) time and O(K) space by queue.
+    * O(1) space by counting current flip number in the K-window. If flip number is even and A[i] is 0 or flip number is odd and A[i] is 1, we need to flip.
+* [999 Available Captures for Rook]({{ leetcode }}999.cpp)
 
 # Backtracking
 
@@ -137,6 +150,7 @@ General framework for combaination problems:
     * Add two numbers represented by linked list.
 * [19 Remove Nth Node From End of List]({{ leetcode }}19.cpp)
     * O(n) time and O(1) space in one pass: two pointers, the distance between which is N.
+* [21 Merge Two Sorted Lists]({{ leetcode }}21.cpp)
 * [23 Merge k Sorted Lists]({{ leetcode }}23.cpp)
     * O(nlog(k)) using heap.
     * O(nlog(k)) time (from merge tree) and O(1) space using merge sort.
@@ -154,12 +168,14 @@ General framework for combaination problems:
     * Converted a sorted linked list into a balanced BST.
 * [138 Copy List with Random Pointer]({{ leetcode }}138.cpp)
     * O(1) space by making origin-\>new single lists.
+* [141 Linked List Cycle]({{ leetcode }}141.cpp)
 * [142 Linked List Cycle II]({{ leetcode }}142.cpp)
     * O(n) time and O(1) space achieved by Floyd's circle finding algorithm.
 * [143 Reorder List]({{ leetcode }}143.cpp)
     * L(1)-\>L(2)->...-\>L(n-1)-\>L(n) => L(1)-\>L(n)-\>L(2)-\>L(n-1)...
     * O(n) time and O(1) space. Reverse the second half and merge.
 * [147 Insertion Sort List]({{ leetcode }}147.cpp)
+* [206 Reverse Linked List]({{ leetcode }}206.cpp)
 * [328 Odd Even Linked List]({{ leetcode }}328.cpp)
     * L(1)-\>L(2)->...-\>L(n-1)-\>L(n) => L(1)-\>L(3)-\>...L(2)-\>L(4)...
     * O(n) time and in place. Invariant: odd-even list + origin list.
@@ -193,12 +209,19 @@ Besides being an O(1) r/w table, hash tables are often used to save preprocessed
 * [454 4Sum II]({{ leetcode }}454.cpp)
     * Given four number arrays, count number of quadruples that sum up to zero.
     * O(n^2) time by count two sums first.
+* [532 K-diff Pairs in an Array]({{ leetcode }}532.cpp)
+    * Find number of (a,b) pairs in an array that |a-b| is k.
 * [939 Minimum Area Rectangle]({{ leetcode }}939.cpp)
     * Given (x, y) points, find minimum area of square constructed by four of them.
     * O(n^2) time by checking point pairs as diagonal points. Find rest in hashset.
 * [966 Vowel Spellchecker]({{ leetcode }}966.cpp)
     * Implement a dictionary supporting capitalization and vowel corrections.
     * Store normalized representations in a hashset.
+* [1001 Grid Illumination]({{ leetcode }}1001.cpp)
+    * Given lights on a board, shutting off a light will shut down eight lights around it. A light will enlight x axis, y axis and a cross. Finish light shut offs and enlighted or not queries.
+    * Sort lights into four classes: x, y, x+y, x-y.
+* [1002 Find Common Characters]({{ leetcode }}1002.cpp)
+    * Find common characters in given words.
 
 # Two Pointers
 
@@ -215,6 +238,8 @@ Two pointers sometimes is an implementation of mono-stack or mono-queue. Mono he
 * [16 3Sum Closest]({{ leetcode }}16.cpp)
     * 3Sum but return the triplet whose sum is closest to a target.
     * O(n^2) time. Sort and two pointers.
+* [26 Remove Duplicates from Sorted Array]({{ leetcode }}26.cpp)
+* [27 Remove Element]({{ leetcode }}27.cpp)
 * [30 Substring with Concatenation of All Words]({{ leetcode }}30.cpp)
     * Given a string and a word (all same length) list, find all substrings that are made up of the whole word list.
     * O(nm) time and O(m) space, where n is length of string and m is length of word. Word-level two pointer, start from 0 - m-1.
@@ -264,6 +289,8 @@ Two pointers sometimes is an implementation of mono-stack or mono-queue. Mono he
     * Merge sort. Always throw the interval with lower end and keep the rest interval.
 * [992 Subarrays with K Different Integers]({{ leetcode }}992.cpp)
     * Prefix-sum-like method, Find number of subarrays with AT MOST K different integers.
+* [1004 Max Consecutive Ones III]({{ leetcode }}1004.cpp)
+    * Given a 0-1 array, one can change 0 to 1 at most K times. Find maximum consecutive ones.
 
 # String
 
@@ -297,12 +324,21 @@ while (i < s.length() && k < p.length()) {
 * [6 ZigZag Conversion]({{ leetcode }}6.cpp)
 * [8 String to Integer (atoi)]({{ leetcode }}8.cpp)
 * [12 Integer to Roman]({{ leetcode }}8.cpp)
+* [13 Roman to Integer]({{ leetcode }}13.cpp)
+    * Scan right to left, keep maximum roman digit accessed, do add or minus according to the maximum.
+* [14 Longest Common Prefix]({{ leetcode }}14.cpp)
 * [17 Letter Combinations of a Phone Number]({{ leetcode }}17.cpp)
+* [28 Implement strStr()]({{ leetcode }}28.cpp)
+* [38 Count and Say]({{ leetcode }}38.cpp)
+    * 1 -> one one -> 11 -> two one -> 21 -> one two one one -> 1211 -> one one one two two one -> 111221 ...
 * [43 Multiply Strings]({{ leetcode }}43.cpp)
 * [49 Group Anagrams]({{ leetcode }}49.cpp)
     * If word A is word B's permutation, then they're anagrams of each other.
+* [58 Length of Last Word]({{ leetcode }}58.cpp)
+    * Scan from the end.
 * [65 Valid Number]({{ leetcode }}65.cpp)
     * First remove space, then check invalid characters, finally sequentially try to grab sign, int, dot, frac and e-num part.
+* [67 Add Binary]({{ leetcode }}67.cpp)
 * [68 Text Justification]({{ leetcode }}68.cpp)
 * [151 Reverse Words in a String]({{ leetcode }}151.cpp)
 * [158 Read N Characters Given Read4 II - Call multiple times]({{ leetcode }}158.cpp)
@@ -320,6 +356,8 @@ while (i < s.length() && k < p.length()) {
     * Find whether a string is made up by smaller repeating units.
     * Validate whether s is in (s+s)[1:-1]. Proof done by GCD-like approach.
 * [468 Validate IP Address]({{ leetcode }}418.cpp)
+* [680 Valid Palindrome II]({{ leetcode }}680.cpp)
+    * Find whether a string can become a palindrome if at most one character can be deleted.
 * [937 Reorder Log Files]({{ leetcode }}937.cpp)
 
 # Heap
@@ -355,6 +393,7 @@ while (i < s.length() && k < p.length()) {
 
 Mono stack/queue can maintain min/max in average O(1) time, get in strict O(1) time.
 
+* [20 Valid Parentheses]({{ leetcode }}20.cpp)
 * [32 Longest Valid Parentheses]({{ leetcode }}32.cpp)
     * O(n) time, expand by context free grammar: \<exp\> = (\<exp\>) \| \<exp\>\<exp\> \| null
     * O(n) time, simple scan from two ends.
@@ -387,8 +426,13 @@ Mono stack/queue can maintain min/max in average O(1) time, get in strict O(1) t
     * Simplified Create Maximum Number on a single number.
 * [439 Ternary Expression Parser]({{ leetcode }}439.cpp)
     * Evaluate nested ternary expression, like F?1:T?3:4 == 3.
+* [726 Number of Atoms]({{ leetcode }}726.cpp)
+    * Calculate number of atoms in molecular expression, like K4(ON(SO3)2)2 -> K4N2O14S4.
+    * Store atom count as stack element. Do sum for digits after atoms and multiplication after ')'s.
 * [946 Validate Stack Sequences]({{ leetcode }}71.cpp)
     * O(n) space by stack emulation, O(1) space reuse input.
+* [1003 Check If Word Is Valid After Substitutions]({{ leetcode }}1003.cpp)
+    * If S is a valid string and X+Y=S, then X+"abc"+Y is valid as well. Find whether a string is valid.
 
 # Dynamic Programming
 
@@ -433,6 +477,8 @@ Note: for dense problems, search with memo is much slower (~10x) than DP.
 * [64 Minimum Path Sum]({{ leetcode }}64.cpp)
     * Going from left-up to right-down, minimize path cost.
     * O(mn) time classical 2D/0D.
+* [70 Climbing Stairs]({{ leetcode }}70.cpp)
+    * Fibonacci number.
 * [72 Edit Distance]({{ leetcode }}72.cpp)
     * O(mn) time classical 2D/0D. Use alignment to give a proof.
             
@@ -610,6 +656,12 @@ Note: for dense problems, search with memo is much slower (~10x) than DP.
 * [494 Target Sum]({{ leetcode }}494.cpp)
     * Given a number list, one can change their signs, find number of ways to sum to target.
     * O(2000n) time DP, for the sum of elements will not exceed 1000.
+* [514 Freedom Trail]({{ leetcode }}514.cpp)
+    * Given a dail ring and a target string, find minimum cost to dail the target.
+    * O(mn^2) time 2D/1D. F[M][N]: min cost to dail first M characters with ending top is N.
+* [678 Valid Parenthesis String]({{ leetcode }}678.cpp)
+    * \* can represent empty string or left/right parenthesis. Find whether a string made by left/right parenthesis and \* is valid.
+    * F[m][n]: first m character can form a string with n more left parenthesis.
 * [799 Champagne Tower]({{ leetcode }}799.cpp)
     * Treat rest champagne as a whole.
 * [879 Profitable Schemes]({{ leetcode }}879.cpp)
@@ -652,6 +704,12 @@ Note: for dense problems, search with memo is much slower (~10x) than DP.
 * [988 Smallest String Starting From Leaf]({{ leetcode }}988.cpp)
     * Given a binary tree, each node has a character, find smallest string from leaf to root.
     * Tree DP.
+* [996 Number of Squareful Arrays]({{ leetcode }}996.cpp)
+    * Given a number array, find number of permutations that every pair of adjacent elements sums to a perfect square.
+    * Typical Hamilton path with state DP.
+* [1000 Minimum Cost to Merge Stones]({{ leetcode }}1000.cpp)
+    * Merge N piles of stones, each time merge exactly K consecutive piles.
+    * F[m][n][k]: minimum cost of m-th to n-th stone merged into k piles.
 
 # Binary Search
 
@@ -664,7 +722,9 @@ Binary search on answer is a useful technique.
 * [33 Search in Rotated Sorted Array]({{ leetcode }}33.cpp)
     * No duplicate, four cases: \<\<, \<\>, \>\<, and \>\> (not possible).
 * [34 Find First and Last Position of Element in Sorted Array]({{ leetcode }}34.cpp)
+* [35 Search Insert Position]({{ leetcode }}35.cpp)
 * [50 Pow(x, n)]({{ leetcode }}29.cpp)
+* [69 Sqrt(x)]({{ leetcode }}69.cpp)
 * [74 Search a 2D Matrix]({{ leetcode }}74.cpp)
     * The matrix is a sorted array if rows are concatenated.
 * [81 Search in Rotated Sorted Array II]({{ leetcode }}81.cpp)
@@ -831,12 +891,15 @@ Sieve of Eratosthenes, Miller Rabin.
 * [247 Strobogrammatic Number II]({{ leetcode }}247.cpp)
     * Find all numbers that would look the same after turning 180 degree, like 69, 11, 88, 0, etc.
     * Simple recursion.
+* [231 Power of Two]({{ leetcode }}248.cpp)
+    * Determine whether an integer is a power of two. Use lowbit.
 * [248 Strobogrammatic Number III]({{ leetcode }}248.cpp)
     * Find all numbers between low and high.
     * Add a comparator.
 * [277 Find the Celebrity]({{ leetcode }}277.cpp)
     * N-person team, there is a person that doesn't know others but others all know him. Find it by sending knows(A, B) queries.
     * O(n) time. Each query at least strikes out one person.
+* [292 Nim Game]({{ leetcode }}292.cpp)
 * [294 Flip Game II]({{ leetcode }}294.cpp)
     * Non-trivial O(n^2) solution by Sprague-Grundy function.
 * [319 Bulb Switcher]({{ leetcode }}319.cpp)
@@ -897,9 +960,15 @@ Sieve of Eratosthenes, Miller Rabin.
     * Typicial minimax.
 * [497 Random Point in Non-overlapping Rectangles]({{ leetcode }}497.cpp)
     * Area-weighted probability. Why only upper\_bound works?
+* [793 Preimage Size of Factorial Zeroes Function]({{ leetcode }}793.cpp)
+    * Find how many number X are there i.e. X! has k trailing zeros.
+    * Trailing zero number increases every 5 numbers.
 * [812 Largest Triangle Area]({{ leetcode }}812.cpp)
     * Given points, find maximum area of triangle formed by any of them.
     * Heron's formula: S = sqrt(p(p-a)(p-b)(p-c)).
+* [829 Consecutive Numbers Sum]({{ leetcode }}829.cpp)
+    * Find how many ways a number can be represented as an arithmetic sequence.
+    * N=k(k+1)/2+k\*M, enumerate k.
 * [878 Nth Magical Number]({{ leetcode }}878.cpp)
     * Given A and B, find k-th smallest number divisible by A or B.
     * Binary search on n\*A array.
@@ -922,6 +991,8 @@ Sieve of Eratosthenes, Miller Rabin.
 * [991 Broken Calculator]({{ leetcode }}991.cpp)
     * Given X and Y, one can do -1 and \*2 to X, find minimum steps to Y.
     * Consider convert Y to X by doing +1 and /2. Greedily do /2 when even, +1 when odd.
+* [997 Find the Town Judge]({{ leetcode }}997.cpp)
+    * Similar to 277.
 
 # Divide and Conquer
 
@@ -974,6 +1045,8 @@ Stack-Based Iterative Traversal
 * [99 Recover Binary Search Tree]({{ leetcode }}99.cpp)
     * Two elements of a BST is swapped. Find them out.
     * O(1) space by Morris Traversal.
+* [100 Same Tree]({{ leetcode }}100.cpp)
+    * Check whether two binary trees are the same.
 * [102 Binary Tree Level Order Traversal]({{ leetcode }}102.cpp)
     * Sort tree's nodes into different depths.
 * [103 Binary Tree Zigzag Level Order Traversal]({{ leetcode }}103.cpp)
@@ -1005,6 +1078,7 @@ Stack-Based Iterative Traversal
 
 * [173 Binary Search Tree Iterator]({{ leetcode }}173.cpp)
     * Average O(1) time and O(h) memory for next() and hasNext().
+    * Can delete visited nodes, since it's single directional visiting.
 * [199 Binary Tree Right Side View]({{ leetcode }}199.cpp)
 * [236 Lowest Common Ancestor of a Binary Tree]({{ leetcode }}236.cpp)
 * [250 Count Univalue Subtrees]({{ leetcode }}250.cpp)
@@ -1012,9 +1086,11 @@ Stack-Based Iterative Traversal
 * [255 Verify Preorder Sequence in Binary Search Tree]({{ leetcode }}255.cpp)
     * O(n) time by iterative traversal.
     * O(1) space by mono-stack and reuse input vector. Mono stack saves nodes not visited yet, thus all nodes less than current value must be visited (popped), because they can only be in left trees.
+    * Preorder sequence: DDDDIIIDDDDIIIIDDD..., keep a lowest bound for popped ones, they're left subtrees already visited.
 * [272 Closest Binary Search Tree Value II]({{ leetcode }}272.cpp)
     * Given a BST and target value, find k nearest neighbor.
     * O(klog(n)) time using stack-based iterative traversal.
+    * Cannot delete visited nodes, because it's bi-directional visiting.
 * [285 Inorder Successor in BST]({{ leetcode }}285.cpp)
 * [297 Serialize and Deserialize Binary Tree]({{ leetcode }}297.cpp)
 * [298 Binary Tree Longest Consecutive Sequence]({{ leetcode }}298.cpp)
@@ -1034,6 +1110,7 @@ Stack-Based Iterative Traversal
 * [366 Find Leaves of Binary Tree]({{ leetcode }}366.cpp)
     * Remove leaves of a binary tree step by step.
     * Tree DP. for each node calculate it's shortest path to leaf.
+* [404 Sum of Left Leaves]({{ leetcode }}404.cpp)
 * [426 Convert Binary Search Tree to Sorted Doubly Linked List]({{ leetcode }}426.cpp)
     * Convert BST to a sorted list, left=prev, right=next.
     * Simple divide and conquer.
@@ -1048,6 +1125,10 @@ Stack-Based Iterative Traversal
 * [971 Flip Binary Tree To Match Preorder Traversal]({{ leetcode }}971.cpp)
 * [987 Vertical Order Traversal of a Binary Tree]({{ leetcode }}987.cpp)
     * Similar to 314.
+* [993 Cousins in Binary Tree]({{ leetcode }}993.cpp)
+    * Two nodes are cousins if they are at the same depth but have different parents. Find whether two nodes are cousins.
+* [998 Maximum Binary Tree II]({{ leetcode }}998.cpp)
+    * A maximum tree is whose root is alwasy the largest. Given a number array, a max tree can be constructed by recursively pick maximum and build left/right sub arrays. Now append a new number to origin array, insert the number into the origin maximum tree.
 
 # Sort
 
@@ -1187,9 +1268,13 @@ Some sequences satisfy that swapping adjacent elements doesn't affect other elem
 * [491 Increasing Subsequences]({{ leetcode }}491.cpp)
     * Given a number list, find all increasing subsequences.
     * For each position find possible next indices, then DFS.
+* [679 24 Game]({{ leetcode }}679.cpp)
+    * Save results that can be calculated from a certain number set.
 * [967 Numbers With Same Consecutive Differences]({{ leetcode }}967.cpp)
 * [980 Unique Paths III]({{ leetcode }}980.cpp)
     * Hamiltonian path.
+* [994 Rotting Oranges]({{ leetcode }}994.cpp)
+    * There are oranges on a grid, and a rotting orange causes four neighbors to rot. Find minimum time for all oranges are rot.
 
 # Graph
 
@@ -1241,6 +1326,8 @@ Some sequences satisfy that swapping adjacent elements doesn't affect other elem
             lady
 
     * Backtracking with validation by trie.
+* [677 Map Sum Pairs]({{ leetcode }}677.cpp)
+    * Insert(key, val), Sum(prefix)
 
 # Design
 
@@ -1275,6 +1362,8 @@ Some sequences satisfy that swapping adjacent elements doesn't affect other elem
     * Swap deleted one with the last one.
 * [381 Insert Delete GetRandom O(1) - Duplicates allowed]({{ leetcode }}381.cpp)
     * Keep a set of indices instead of a single index.
+* [432 All O\`one Data Structure]({{ leetcode }}432.cpp)
+    * Inc(key), Dec(key), GetMaxKey(), GetMinKey().
 * [460 LFU Cache]({{ leetcode }}460.cpp)
     * Use double linked-list for frequency list and recent list. Each frequency list node contains a recent list.
     * push\_front for frequency-list put new key, earse for get key, insert for frequency list change. Use get in put to add frequency.
