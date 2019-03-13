@@ -94,6 +94,8 @@ tags: Algorithm
 * [POJ 1276 Cash Machine]({{ poj }}1276.cpp)
     * 0/1 Knapsack with object number limit.
     * Need binary optimization (2^0, 2^1, ..., 2^k, N-(1+...+2^k)), where k is the maximum i.e. N-(...)>=0.
+* [POJ 2151 Check the difficulty of problems]({{ poj }}2151.cpp)
+    * Probability DP. Given probability list, F[m][n]: probability of selecting n from m.
 
 # Greedy
 
