@@ -96,6 +96,9 @@ tags: Algorithm
     * Need binary optimization (2^0, 2^1, ..., 2^k, N-(1+...+2^k)), where k is the maximum i.e. N-(...)>=0.
 * [POJ 2151 Check the difficulty of problems]({{ poj }}2151.cpp)
     * Probability DP. Given probability list, F[m][n]: probability of selecting n from m.
+* [POJ 1836 Alignment]({{ poj }}1836.cpp)
+    * Given a line of soldiers, find minimum number of soldiers needed to move inorder to make each soldier in the line can see either left or right extremity.
+    * Strict LIS on both sides.
 
 # Greedy
 
@@ -110,6 +113,9 @@ tags: Algorithm
 * [POJ 1328 Radar Installation]({{ poj }}1328.cpp)
     * Given intervals, find minimum points to color all intervals.
 * [POJ 2586 Y2K Accounting Bug]({{ poj }}2586.cpp)
+* [POJ 3253 Fence Repair]({{ poj }}3253.cpp)
+    * Given a single wood plank, cut it into given pieces. Each cut cost is the length of the plank being cut, find minimum cost.
+    * Huffman tree.
 
 # Graph
 
@@ -150,6 +156,9 @@ tags: Algorithm
 * Eularian Path
     * Hierholzer's algorithm
     * [USACO Riding the Fences]({{ usaco }}fence.cpp)
+    * [POJ 2513 Colored Sticks]({{ poj }}2513.cpp)
+        * Given sticks with colored two ends, find whether they can be aligned i.e. ends with same colors are connected.
+        * Note that there might be non-connected graph.
 
 * Minimum Spanning Tree
     * Prim
@@ -189,6 +198,9 @@ tags: Algorithm
         * [POJ 3020 Antenna Placement]({{ poj }}3020.cpp)
             * Given (x, y) points, one can cover points using length-2 capsules. Find minimum capsules needed.
             * |nodes| = |max-match| + |min-edge-cov|. Positions as nodes, capsules as edges.
+        * [POJ 2531 Network Saboteur]({{ poj }}2531.cpp)
+            * Find maximum cut of a fully connected graph.
+            * O(2^(n-1)\*n) time, state enumerate using gray code.
 
 * Flood Filling
     * [USACO Street Race]({{ usaco }}race3.cpp)
@@ -208,6 +220,9 @@ tags: Algorithm
 
 * [USACO Factorials]({{ usaco }}fact4.cpp)
     * Find rightmost non-zero digit of n!.
+* [POJ 3087 Shuffle'm Up]({{ poj }}3087.cpp)
+    * Given two equal-length sequences, one can shuffle them. E.g., ABAB and BABA -> BAABBAAB. Find whether it's possible to get a sequence by shuffling multiple times.
+    * This is a out perfect shuffle problem. See solution file for further explanation.
 
 # Miscellaneous
 
@@ -292,6 +307,34 @@ tags: Algorithm
     * Formula solution exists. See USACO analysis.
 * [USACO Frame Up]({{ usaco }}frameup.cpp)
 * [USACO Snail Trail]({{ usaco }}snail.cpp)
+* [POJ 2488 A Knight's Journey]({{ poj }}2488.cpp)
+    * Given a chess board and a knight, find whether there is a hamilton path.
+* [POJ 3083 Children of the Candy Corn]({{ poj }}3083.cpp)
+    * Walk through a maze by walking alongside left/right wall and shortest path.
+    * Turn left/right when there is path to left/right. Else if no path turn right/left.
+* [POJ 3009 Curling 2.0]({{ poj }}3009.cpp)
+    * Throw stones to the target in a grid. The stone can brick one wall at a time.
+    * Use DFS since the maze can change.
+* [POJ 1321 棋盘问题]({{ poj }}1321.cpp)
+    * Generalized N-queen problem.
+* [POJ 2251 Dungeon Master]({{ poj }}2251.cpp)
+    * Given a 3D maze, find shortest path from start to end. Simple BFS.
+* [POJ 3278 Catch That Cow]({{ poj }}3278.cpp)
+    * Given N and K, one can do N+1, N-1 and N\*2 to get K, find minimum steps.
+    * Simple BFS since 0 <= N (state number) <= 100000.
+* [POJ 1426 Find The Multiple]({{ poj }}1426.cpp)
+    * Given n, find m i.e. m % n == 0 and m's decimal representation contains only 0 and 1.
+    * Do bfs on remainder space of n.
+* [POJ 3126 Prime Path]({{ poj }}3126.cpp)
+    * Given two 4-digit primes A and B, find least number of 1-digit replacements to convert A to B. Simple BFS.
+* [POJ 3414 Pots]({{ poj }}3414.cpp)
+    * Given two pots with volume A and B, and three actions FILL, DROP and POUR, find least steps to make C unit water. Simple BFS.
+* [POJ 1416 Shredding Company]({{ poj }}1416.cpp)
+    * Given two numbers A and B, find the way to cut B that sum of the segments is maximum and no more than A.
+* [POJ 2676 Sudoku]({{ poj }}2676.cpp)
+    * Solve a 9x9 sudoku.
+* [POJ 1129 Channel Allocation]({{ poj }}1129.cpp)
+    * Vertex coloring problem.
 
 # String
 * [POJ 1035 Spell Checker]({{ poj }}1035.cpp)
@@ -317,4 +360,12 @@ tags: Algorithm
 * [POJ 3274 Gold Balanced Lineup]({{ poj }}3274.cpp)
     * Find longest subarray that all bits appear same times.
     * Prefix sum, generate relative hash, and for each hash find maximum gap.
+* [POJ 1840 Eqs]({{ poj }}1840.cpp)
+    * Given ai (1 <= i <= 5), find number of solutions of SUM(ai * xi) = 0.
+    * Similar to LeetCode two sum.
+* [POJ 2002 Squares]({{ poj }}2002.cpp)
+    * Given 2d points, find number of squares.
+    * O(n^2) enumeration.
+* [POJ 2503 Babelfish]({{ poj }}2503.cpp)
+    * Translate words given a dictionary.
 
