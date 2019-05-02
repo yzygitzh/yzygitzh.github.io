@@ -1241,6 +1241,7 @@ Some sequences satisfy that swapping adjacent elements doesn't affect other elem
 * [397 Integer Replacement]({{ leetcode }}397.cpp)
     * Given a number n, if n is even can do n >> 1, else can do n+1 or n-1. Find least step to 1.
     * Simple BFS.
+    * Can do greedy except for n == 3.
 * [417 Pacific Atlantic Water Flow]({{ leetcode }}417.cpp)
     * Given a grid, water flows to non-greater grids. Find all grids that can flow to both up-left and right-down.
     * Simple BFS. Memo search is not valid because states are not strictly mono.
