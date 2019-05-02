@@ -6,7 +6,7 @@ permalink: /about/
 
 I'm Ziyue Yang, a master student majoring in computer science, in Peking University.
 
-My advisor is [Yao Guo](http://sei.pku.edu.cn/~yaoguo/). My research interests are mobile systems, mobile app analysis, etc. I've got several publications:
+My advisor is [Yao Guo](http://sei.pku.edu.cn/~yaoguo/). My research interests include mobile systems, mobile app analysis, etc. I've got several publications:
 
 * Li, Y.\*, __Yang, Z.\*__, Guo, Y., Chen, X. _A Deep Learning based Approach to Automated Android App Testing._ __(arXiv pre-print, Full Paper)__ (*: Co-primary authors) [PDF](https://arxiv.org/pdf/1901.02633)
 
@@ -16,6 +16,6 @@ My advisor is [Yao Guo](http://sei.pku.edu.cn/~yaoguo/). My research interests a
 
 * __Yang, Z.__, Li, Y., Guo, Y., & Chen, X. _UBAC: UI-Based Fine-Grained Access Control on Android._ __(SOSP’17, Poster)__ [PDF]({{ site.url }}/assets/papers/ziyue_yang_sosp_2017.pdf)
 
-* Li, Y., __Yang, Z.__, Guo, Y., & Chen, X. _DroidBot: a lightweight UI-guided test input generator for Android._ __(ICSE’17, Demo Track)__ [PDF]({{ site.url }}/assets/papers/ziyue_yang_icse_2017.pdf)
+* Li, Y., __Yang, Z.__, Guo, Y., & Chen, X. _DroidBot: A Lightweight UI-Guided Test Input Generator for Android._ __(ICSE’17, Demo Track)__ [PDF]({{ site.url }}/assets/papers/ziyue_yang_icse_2017.pdf)
 
 
