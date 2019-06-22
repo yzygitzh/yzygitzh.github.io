@@ -13,6 +13,11 @@ tags: Algorithm
 
 # Advanced Data Structures
 
+* Segment Tree
+    * [POJ 2528 Mayor's posters]({{ poj }}2528.cpp)
+        * Given posters and their placement order, find number of posters visible.
+        * Segment tree with lazy update.
+
 * Suffix Array
     * [USACO Music Theme]({{ usaco }}theme.cpp)
         * DP solution by maintaining len[i][j], longest common prefix starting from i and j.
@@ -99,6 +104,17 @@ tags: Algorithm
 * [POJ 1836 Alignment]({{ poj }}1836.cpp)
     * Given a line of soldiers, find minimum number of soldiers needed to move inorder to make each soldier in the line can see either left or right extremity.
     * Strict LIS on both sides.
+* [POJ 1260 Pearls]({{ poj }}1260.cpp)
+    * There are M classes of pearls and their value V. One has to pay 10 more units when buying any class of pearls. Better pearls can replace worse ones. Given a shopping list, find minimum cost.
+    * F[M][2]: minimum cost of buying highest M classes of pearls when buying the M-th class or not.
+* [POJ 2533 Longest Ordered Subsequence]({{ poj }}2533.cpp)
+* [POJ 3176 Cow Bowling]({{ poj }}2533.cpp)
+    * Typical triangle sum DP.
+* [POJ 1080 Human Gene Functions]({{ poj }}1080.cpp)
+    * Typical weighted LCS.
+* [POJ 1159 Palindrome]({{ poj }}1159.cpp)
+    * Given a string, find minimum inserts to make it palindrome.
+    * Let F[i][j] is minimum inserts between i and j. F[i][j] = min(F[i+1][j]+1, F[i][j-1]+1, F[i+1][j-1] only if s[i]==s[j]).
 
 # Greedy
 
@@ -173,6 +189,8 @@ tags: Algorithm
         * Same with USACO Agri-Net.
     * [POJ 3026 Borg Maze]({{ poj }}3026.cpp)
         * Bare MST. STL queue will timeout, use vanilla array.
+    * [POJ 2031 Building a Space Station]({{ poj }}2031.cpp)
+        * Bare MST, need to merge connected points.
 
 * Network Flow
     * Max-Flow
@@ -223,6 +241,23 @@ tags: Algorithm
 * [POJ 3087 Shuffle'm Up]({{ poj }}3087.cpp)
     * Given two equal-length sequences, one can shuffle them. E.g., ABAB and BABA -> BAABBAAB. Find whether it's possible to get a sequence by shuffling multiple times.
     * This is a out perfect shuffle problem. See solution file for further explanation.
+* [POJ 3252 Round Numbers]({{ poj }}3252.cpp)
+    * Define "round number" is a number whose binary representation has more 1 than 0. Find how many round numbers are there in a given range [x, y].
+* [POJ 1850 Code]({{ poj }}1850.cpp)
+    * Given encoding rule a=1, b=2, ..., z=26, ab=27, ..., az=51, bc=52, ..., vwxyz=83681, find encoding for any word.
+* [POJ 1019 Number Sequence]({{ poj }}1019.cpp)
+    * Given number sequence like 112123123412345..., find i-th digit.
+* [POJ 1942 Paths on a Grid]({{ poj }}1942.cpp)
+    * Calculate C(m+n, m). Be careful with timeout when m == 1 or m == 2.
+* [POJ 2635 The Embarrassed Cryptographer]({{ poj }}2635.cpp)
+    * Given big M (~100 digits), calculate its minimum prime factor. Need prime sieve.
+* [POJ 3292 Semi-prime H-numbers]({{ poj }}3292.cpp)
+    * Given domain {4k+1}, find semi primes. A semi prime is a number produced by two-prime multiplication.
+* [POJ 1845 Sumdiv]({{ poj }}1845.cpp)
+    * Given A and B, find sum of all natural divisors of A^B mod 9901.
+    * Factorize A^B as a1^n1\*a2^n2 ..., sum can be represented by generative function: (1+a1+...+a1^n1)(1+a2+...+a2^n2)...
+* [POJ 2115 C Looooops]({{ poj }}2115.cpp)
+    * Find minimum solution for module linear equation.
 
 # Miscellaneous
 
@@ -368,4 +403,18 @@ tags: Algorithm
     * O(n^2) enumeration.
 * [POJ 2503 Babelfish]({{ poj }}2503.cpp)
     * Translate words given a dictionary.
+
+# Binary search
+
+* [POJ 3273 Monthly Expense]({{ poj }}3273.cpp)
+    * Given N numbers, find M segments with minimum maximum segment sum.
+    * Binary search for the maximum sum.
+* [POJ 3258 River Hopscotch]({{ poj }}3258.cpp)
+    * Given 0, L and N points between 0 and L, find maximum of minimum distance by removing M points.
+    * Binary search the distance. To validate the answer, use greedy policy to remove stones.
+* [POJ 1905 Expanding Rods]({{ poj }}1905.cpp)
+    * Find solution of sin(A/x) = B/x (A > B).
+    * Binary search, termination condition is defined by |a-b|/min(a, b) < 1e-12.
+* [POJ 3122 Pie]({{ poj }}3122.cpp)
+    * Given M pies with different radius, calculate maximum sub-piece for N people.
 
