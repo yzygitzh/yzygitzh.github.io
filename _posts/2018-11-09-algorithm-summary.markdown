@@ -17,6 +17,36 @@ tags: Algorithm
     * [POJ 2528 Mayor's posters]({{ poj }}2528.cpp)
         * Given posters and their placement order, find number of posters visible.
         * Segment tree with lazy update.
+    * [POJ 2777 Count Color]({{ poj }}2777.cpp)
+        * Range update, range query for number of different elements.
+        * Use bitmap to mark elements.
+        * If using plain array for segment tree, we need O(4L) space because it might not be a complete binary tree.
+    * [POJ 2750 Potted Flower]({{ poj }}2750.cpp)
+        * Given a number circle and modification instructions, find maximum arc after each instruction but not the full circle.
+        * Represent the circle by a chain. max_arc = max(max_chain, sum - min_chain) if max_chain != sum else sum - min_chain.
+    * [POJ 2482 Stars in Your Window]({{ poj }}2482.cpp)
+        * Given points with values and a fixed-size box, find maximum value that can be bounded.
+        * Each point can be represented by a Y-axis segment, and scan along X axis.
+    * [POJ 3264 Balanced Lineup]({{ poj }}3264.cpp)
+        * Range min/max query.
+    * [POJ 3368 Frequent values]({{ poj }}3264.cpp)
+        * Range query most frequent number.
+        * Actually a DP problem, for each segment maintains (maxCnt, minVal, minCnt, maxVal, maxCnt).
+
+* Binary Index Tree
+    * [POJ 2828 Buy Tickets]({{ poj }}2828.cpp)
+        * Finish insertion sort given the insertion sequence.
+        * Reverse the insertion sequence. Maintain slots remaining in [0, m], and binary search for the position with valid slots for each insertion.
+    * [POJ 2886 Who Gets the Most Candies?]({{ poj }}2886.cpp)
+        * Given a circle made by children. Each child has an offset. Each time we delete a child from the circle and find the next child according to the offset. The p-th child deleted got number-of-p's-divisors score. Find the child with maximum score.
+        * Maintain slots remaining in [0, m], similar to 2828.
+        * Number of divisors are calculated by sieve method.
+    * [POJ 2352 Stars]({{ poj }}2352.cpp)
+        * Given points, define level of a point as number of points in the left-down side of it.
+        * Process points in left-to-right, down-to-up order.
+    * [POJ 1195 Mobile phones]({{ poj }}1195.cpp)
+        * 2D point modification and range query
+        * 2D BIT, easy expansion from 1D case.
 
 * Suffix Array
     * [USACO Music Theme]({{ usaco }}theme.cpp)
@@ -101,6 +131,9 @@ tags: Algorithm
     * Need binary optimization (2^0, 2^1, ..., 2^k, N-(1+...+2^k)), where k is the maximum i.e. N-(...)>=0.
 * [POJ 2151 Check the difficulty of problems]({{ poj }}2151.cpp)
     * Probability DP. Given probability list, F[m][n]: probability of selecting n from m.
+* [POJ 3267 The Cow Lexicon]({{ poj }}3267.cpp)
+    * Given a dictionary and a string, find minimum characters to remove from string to make the string compositable by words from the dictionary.
+    * For each position try drop or match each word in dictionary.
 * [POJ 1836 Alignment]({{ poj }}1836.cpp)
     * Given a line of soldiers, find minimum number of soldiers needed to move inorder to make each soldier in the line can see either left or right extremity.
     * Strict LIS on both sides.
@@ -115,6 +148,31 @@ tags: Algorithm
 * [POJ 1159 Palindrome]({{ poj }}1159.cpp)
     * Given a string, find minimum inserts to make it palindrome.
     * Let F[i][j] is minimum inserts between i and j. F[i][j] = min(F[i+1][j]+1, F[i][j-1]+1, F[i+1][j-1] only if s[i]==s[j]).
+* [POJ 1191 棋盘分割]({{ poj }}1191.cpp)
+    * Given a weighted 8x8 chess board. You can cut one rectangle off for n times. Find minimum of variance of pieces.
+    * For each sub-rectangle, maintain minimum variance for cutting into x pieces.
+* [POJ 3280 Cheapest Palindrome]({{ poj }}3280.cpp)
+    * Given a string, find minimum insert/deletes to make it palindrome.
+    * Similar to POJ 1159.
+* [POJ 2029 Get Many Persimmon Trees]({{ poj }}2029.cpp)
+    * Given points and a rectangle, find maximum points boundable by the rectangle.
+    * Can do with prefix sum. 2D BIT solution similar to POJ 1195.
+* [POJ 2948 Martian Mining]({{ poj }}2948.cpp)
+    * Given a grid, there are mineral type A and B on grid points. One can build conveyor belts to collect A to left and B to top. Find maximum mineral that can be collected.
+    * Maintain F[i][j] as maximum mineral in [0,i]x[0,j] area. Scan from top-left gives O(N^2) solution, and from bottom-right gives O(N^3).
+* [POJ 1925 Spiderman]({{ poj }}1925.cpp)
+    * The problem is not good, for its worst time complexity is too high.
+* [POJ 3034 Whac-a-Mole]({{ poj }}1925.cpp)
+    * Find maximum score in a Whac-a-Mole game. Hammers can move from/to integer points in straight lines only.
+    * F[m][n][t]: maximum score with hammer's end position at (m, n) at time t.
+* [POJ 3254 Corn Fields]({{ poj }}3254.cpp)
+    * Given a 0-1 matrix. One can select 1's from it but without adjacent 1's. Find number of valid selections.
+    * F[m][n]: number of selections with first m rows when m-th row is of state n.
+* [POJ 1185 炮兵阵地]({{ poj }}1185.cpp)
+    * Similar to 3254, but need consider two rows/columns for whether adjacent. Need to calculate valid states first to shrink state space.
+* [POJ 2411 Mondriaan's Dream]({{ poj }}2411.cpp)
+    * Given mxn field, find number of filling methods with 1x2 bricks.
+    * 0-1 encoding for vertical bricks and 1-1 for horizontal bricks. Then similar to 3254.
 
 # Greedy
 
@@ -370,8 +428,12 @@ tags: Algorithm
     * Solve a 9x9 sudoku.
 * [POJ 1129 Channel Allocation]({{ poj }}1129.cpp)
     * Vertex coloring problem.
+* [POJ 3411 Paid Roads]({{ poj }}3411.cpp)
+    * Given a road graph, roads have costs. Some roads can be pre-paid at some node. Find minimum cost from node 1 to node N.
+    * DFS, state is pre-paid roads and current city. Haven't get accepted yet.
 
 # String
+
 * [POJ 1035 Spell Checker]({{ poj }}1035.cpp)
     * Given a word and a dictionary, find all one-edit-distance matches.
 * [POJ 3080 Blue Jeans]({{ poj }}3080.cpp)
@@ -379,6 +441,12 @@ tags: Algorithm
     * Binary search LCS length.
 * [POJ 1936 All in All]({{ poj }}1936.cpp)
     * Implement isSubString.
+* [POJ 1961 Period]({{ poj }}1961.cpp)
+    * Given a string s, for each its prefix judge whether is periodical.
+    * Use KMP next array WITHOUT optimization. Cycle length is n - next(n) for 1 <= n <= len(s).
+* [POJ 2406 Power Strings]({{ poj }}2406.cpp)
+    * Given a string s, find whether it's periodical.
+    * Similar with POJ 1961. Or find s in (s+s)[1:-1].
 
 # Sort
 * [POJ 2388 Who's in the Middle]({{ poj }}2388.cpp)
@@ -417,4 +485,13 @@ tags: Algorithm
     * Binary search, termination condition is defined by |a-b|/min(a, b) < 1e-12.
 * [POJ 3122 Pie]({{ poj }}3122.cpp)
     * Given M pies with different radius, calculate maximum sub-piece for N people.
+
+# Union find
+
+* [POJ 1703 Find them, Catch them]({{ poj }}1703.cpp)
+    * There are two gangs in a city. Given enemy relationships and queries for relationship, answer yes/no/unkonwn.
+    * For each person maintain its enemy. Do merges in enemy relationships.
+* [POJ 2492 A Bug's Life]({{ poj }}2492.cpp)
+    * Similar to 1703, but need to find contradiction.
+    * Judge before each merge.
 

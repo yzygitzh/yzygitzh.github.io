@@ -326,6 +326,7 @@ while (i < s.length() && k < p.length()) {
 * [12 Integer to Roman]({{ leetcode }}8.cpp)
 * [13 Roman to Integer]({{ leetcode }}13.cpp)
     * Scan right to left, keep maximum roman digit accessed, do add or minus according to the maximum.
+    * Roman numbers are actually mono stacks.
 * [14 Longest Common Prefix]({{ leetcode }}14.cpp)
 * [17 Letter Combinations of a Phone Number]({{ leetcode }}17.cpp)
 * [28 Implement strStr()]({{ leetcode }}28.cpp)
@@ -354,7 +355,7 @@ while (i < s.length() && k < p.length()) {
     * Similar to text justification. Need to find end-position circles.
 * [459 Repeated Substring Pattern]({{ leetcode }}459.cpp)
     * Find whether a string is made up by smaller repeating units.
-    * Validate whether s is in (s+s)[1:-1]. Proof done by GCD-like approach.
+    * Validate whether s is in (s+s)[1:-1]. This basically checks if the s can be represented by a rotation of itself. If yes, then s is repeated. (GCD-like proof)
 * [468 Validate IP Address]({{ leetcode }}418.cpp)
 * [680 Valid Palindrome II]({{ leetcode }}680.cpp)
     * Find whether a string can become a palindrome if at most one character can be deleted.
@@ -401,7 +402,6 @@ Mono stack/queue can maintain min/max in average O(1) time, get in strict O(1) t
     * Simplify a UNIX path. Use stack to handle /../../ == / cases.
 * [84 Largest Rectangle in Histogram]({{ leetcode }}84.cpp)
     * Mono stack.
-    * O(n) time in another DP solution, for each stick save lessThanLeft and lessThanRight. 
 * [150 Evaluate Reverse Polish Notation]({{ leetcode }}150.cpp)
 * [224 Basic Calculator]({{ leetcode }}224.cpp)
     * Evaluate expressoin containing parentheses and +-.
@@ -547,7 +547,7 @@ Note: for dense problems, search with memo is much slower (~10x) than DP.
     * O(n) space if we update answer while enumerating all palindromes.
 * [139 Word Break]({{ leetcode }}139.cpp)
     * Given a dictionary and a string, judge whether the string can be cut into words from dictionary. 
-    * O(nm) time, where n is string length and m is maximum word length, typical 1D/1D.
+    * O(nmd) time, where n is string length, m is maximum word length and d is dict size, typical 1D/1D.
 * [140 Word Break II]({{ leetcode }}140.cpp)
     * Output all possible answers in Word Break.
     * O(nm) time, 1D/1D. Use trie.
