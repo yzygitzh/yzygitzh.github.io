@@ -31,7 +31,7 @@ Prefix-sum can solve many subarray related problems.
     * O(n) time and O(1) space achieved by Boyer Moore Vote algorithm.
 * [228 Summary Ranges]({{ leetcode }}228.cpp)
     * Given a sorted number array, convert them into intervals.
-* [229 Majority Element II]({{ leetcode }}169.cpp)
+* [229 Majority Element II]({{ leetcode }}229.cpp)
     * Boyer Moore Vote can be extended to O(n) time and O(k) space in general [n/k] case.
     * Each time throw k different elements.
 * [238 Product of Array Except Self]({{ leetcode }}238.cpp)
@@ -56,6 +56,7 @@ Prefix-sum can solve many subarray related problems.
 * [487 Max Consecutive Ones II]({{ leetcode }}487.cpp)
     * Given 01 string, one can turn a 0 to 1. Find maximum consecutive 1 string.
     * O(n) time and O(1) space, scan through 1 strings and try to connect 0-connecte ones.
+    * Can use 424's method.
 * [498 Diagonal Traverse]({{ leetcode }}498.cpp)
     * Walk matrix (0,0), (0,1), (1,0), (2,0), (1,1), (0,2), ...
 * [531 Lonely Pixel I]({{ leetcode }}531.cpp)
@@ -76,7 +77,7 @@ Prefix-sum can solve many subarray related problems.
 * [995 Minimum Number of K Consecutive Bit Flips]({{ leetcode }}995.cpp)
     * Given a 0-1 array, one can flip a consecutive K bits at a time. Find minimum flip steps to make all elements 1.
     * O(n) time and O(K) space by queue.
-    * O(1) space by counting current flip number in the K-window. If flip number is even and A[i] is 0 or flip number is odd and A[i] is 1, we need to flip.
+    * O(1) space by counting current flip number in the K-window. If flip number & 1 == A[i], we need to flip. Make use of input array to record whether a position is flipped.
 * [999 Available Captures for Rook]({{ leetcode }}999.cpp)
 
 # Backtracking
@@ -273,6 +274,7 @@ Two pointers sometimes is an implementation of mono-stack or mono-queue. Mono he
     * Given a string, one can at most alter k characters. Find the maximum length of repeat character string.
     * O(n) time. Note that these k characters must be in a sliding window.
     * Use per-character queue also works.
+    * O(26) space, maintaining maximum character count ever encountered in the sliding window. The length of sliding window is mono increasing.
 * [457 Circular Array Loop]({{ leetcode }}457.cpp)
     * Find circles in integer array. Floyd Cycle Detection Algorithm.
     * Pitfall: only mark elements as zero when the case is confirmed invalid.
@@ -544,7 +546,7 @@ Note: for dense problems, search with memo is much slower (~10x) than DP.
 * [132 Palindrome Partitioning II]({{ leetcode }}132.cpp)
     * Given a string, calculate minimum times of cut to cut it into palindromes.
     * O(n^2) time, classical 1D/1D.
-    * O(n) space if we update answer while enumerating all palindromes.
+    * O(n) space if we update answer while enumerating all palindromes. Invariant: the prefix before current palindrome has been considered.
 * [139 Word Break]({{ leetcode }}139.cpp)
     * Given a dictionary and a string, judge whether the string can be cut into words from dictionary. 
     * O(nmd) time, where n is string length, m is maximum word length and d is dict size, typical 1D/1D.
@@ -1295,6 +1297,8 @@ Some sequences satisfy that swapping adjacent elements doesn't affect other elem
     * Union-find is also ok. For each a/b=x, assume a=x and b=1. If a and b already have assumed values, update them. Union-find is used for this update.
 * [444 Sequence Reconstruction]({{ leetcode }}444.cpp)
     * Given some sequences, judge whether a supersequence S can be uniquely constructed from those sequences.
+    * Topological sort.
+* [1136 Parallel Courses]({{ leetcode }}1136.cpp)
     * Topological sort.
 
 # Trie
