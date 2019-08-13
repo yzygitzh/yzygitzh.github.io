@@ -8,7 +8,7 @@ I'm Ziyue Yang, a master student majoring in computer science, in Peking Univers
 
 My advisor is [Yao Guo](http://sei.pku.edu.cn/~yaoguo/). My research interests include mobile systems, mobile app analysis, etc. I've got several publications:
 
-* Li, Y.\*, __Yang, Z.\*__, Guo, Y., Chen, X. _A Deep Learning based Approach to Automated Android App Testing._ __(arXiv pre-print, Full Paper)__ (*: Co-primary authors) [PDF](https://arxiv.org/pdf/1901.02633)
+* Li, Y.\*, __Yang, Z.\*__, Guo, Y., Chen, X. _Humanoid: A Deep Learning-based Approach to Automated Black-box Android App Testing._ __(ASE’19, Demo Track)__ (*: Co-primary authors)
 
 * Li, Y., __Yang, Z.__, Guo, Y., Chen, X., Agarwal Y., & Hong J.I. _Automated Extraction of Personal Knowledge from Smartphone Push Notifications._ __(IEEE BigData’18, Full Paper)__ [PDF]({{ site.url }}/assets/papers/ziyue_yang_bigdata_2018.pdf)
 
