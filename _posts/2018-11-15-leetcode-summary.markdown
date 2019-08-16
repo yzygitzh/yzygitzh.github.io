@@ -211,7 +211,7 @@ Besides being an O(1) r/w table, hash tables are often used to save preprocessed
     * Given four number arrays, count number of quadruples that sum up to zero.
     * O(n^2) time by count two sums first.
 * [532 K-diff Pairs in an Array]({{ leetcode }}532.cpp)
-    * Find number of (a,b) pairs in an array that |a-b| is k.
+    * Find number of (a,b) pairs in an array that \|a-b\| is k.
 * [939 Minimum Area Rectangle]({{ leetcode }}939.cpp)
     * Given (x, y) points, find minimum area of square constructed by four of them.
     * O(n^2) time by checking point pairs as diagonal points. Find rest in hashset.
@@ -323,9 +323,10 @@ while (i < s.length() && k < p.length()) {
 * [5 Longest Palindromic Substring]({{ leetcode }}5.cpp)
     * O(n^2) time easy solution.
     * O(nlog(n)) time suffix array.
+    * O(nlog(n)) string hash.
 * [6 ZigZag Conversion]({{ leetcode }}6.cpp)
-* [8 String to Integer (atoi)]({{ leetcode }}8.cpp)
-* [12 Integer to Roman]({{ leetcode }}8.cpp)
+* [8 String to Integer (atoi)]({{ leetcode }}8.c)
+* [12 Integer to Roman]({{ leetcode }}12.cpp)
 * [13 Roman to Integer]({{ leetcode }}13.cpp)
     * Scan right to left, keep maximum roman digit accessed, do add or minus according to the maximum.
     * Roman numbers are actually mono stacks.
@@ -358,6 +359,7 @@ while (i < s.length() && k < p.length()) {
 * [459 Repeated Substring Pattern]({{ leetcode }}459.cpp)
     * Find whether a string is made up by smaller repeating units.
     * Validate whether s is in (s+s)[1:-1]. This basically checks if the s can be represented by a rotation of itself. If yes, then s is repeated. (GCD-like proof)
+    * Use KMP cyclic segment (i - next[i] for 1 <= i <= sLen).
 * [468 Validate IP Address]({{ leetcode }}418.cpp)
 * [680 Valid Palindrome II]({{ leetcode }}680.cpp)
     * Find whether a string can become a palindrome if at most one character can be deleted.
@@ -391,6 +393,9 @@ while (i < s.length() && k < p.length()) {
 * [407 Trapping Rain Water II]({{ leetcode }}407.cpp)
     * Given a grid with heights, find how much rain water it can trap.
     * O(mnlog(mn)) time, each time floodfill from lowest grid that cannot trap any water. The cannot-trap set is maintained by a heap.
+* [630 Course Schedule III]({{ leetcode }}630.cpp)
+    * Given semester days and courses with days needed and deadline, find maximum number of courses one can take in a semester.
+    * Sort courses by deadline, use max-heap (days) to maintain optimal choice. Replace heap top when there is a course taking less time than top.
 
 # Stack
 
@@ -456,7 +461,6 @@ Note: for dense problems, search with memo is much slower (~10x) than DP.
                       isStar(p[N]) && (F[M][N-1] || (isDot(p[N]) || s[M] == p[N]) && F[M-1][N])
             Bound: F[0][N], true for N == 0 and prefix stars.
 
-    * O(n) time by DFA.
 * [44 Wildcard Matching]({{ leetcode }}44.cpp)
     * \'?\' matches any single character, \'\*\' matches zero or more any character.
     * O(nk) time, 2D/0D.
@@ -467,7 +471,6 @@ Note: for dense problems, search with memo is much slower (~10x) than DP.
                       isStar(p[N]) && (F[M][N-1] || F[M-1][N])
             Bound: F[0][N], true for N == 0 and prefix stars.
 
-    * There is also an O(n) time and O(1) space greedy solution, greedily matches strings containing \'a-z\' and \'?\' since \'\*\' can match anything.
 * [53 Maximum Subarray]({{ leetcode }}53.cpp)
     * O(n) time and O(1) space.
 * [62 Unique Paths]({{ leetcode }}62.cpp)
