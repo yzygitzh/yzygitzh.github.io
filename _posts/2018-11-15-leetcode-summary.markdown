@@ -488,7 +488,7 @@ Note: for dense problems, search with memo is much slower (~10x) than DP.
     * O(mn) time classical 2D/0D. Use alignment to give a proof.
             
             F[M][N]: edit distance between s1[:M] and s2[:N]
-            F[M][N] = min(F[M-1][N-1], F[M][N-1] + 1, F[M-1][N])
+            F[M][N] = min(F[M-1][N-1] + !(s1[M] == s2[N]), F[M][N-1] + 1, F[M-1][N] + 1)
 
 * [85 Maximal Rectangle]({{ leetcode }}85.cpp)
     * O(mn) time, classical 2D/0D.
@@ -538,10 +538,11 @@ Note: for dense problems, search with memo is much slower (~10x) than DP.
 * [123 Best Time to Buy and Sell Stock III]({{ leetcode }}123.cpp)
     * Complete at most two transactions.
     * O(n) time O(n) space by scanning from two ends, and for each point calculate maximum profit before/after this point.
-    * O(n) time and O(1) space by DFA.
+    * O(n) time and O(1) space by DFA. Reuse former states by updating from higher states.
 
-            0 -sell-> 1 -buy--> 2 -sell-> finale
-            <-rest--  <-rest--  <-rest-
+            0 -buy--> 1 -sell-> 2 -buy--> 3 -sell-> finale
+            ^     |   ^     |   ^     |   ^     |
+            |-rest-   |-rest-   |-rest-   |-rest-
 
 * [124 Binary Tree Maximum Path Sum]({{ leetcode }}124.cpp)
     * O(n) time, 1D/0D. Classical tree DP.
@@ -552,10 +553,9 @@ Note: for dense problems, search with memo is much slower (~10x) than DP.
     * O(n) space if we update answer while enumerating all palindromes. Invariant: the prefix before current palindrome has been considered.
 * [139 Word Break]({{ leetcode }}139.cpp)
     * Given a dictionary and a string, judge whether the string can be cut into words from dictionary. 
-    * O(nmd) time, where n is string length, m is maximum word length and d is dict size, typical 1D/1D.
+    * O(nm) time, where n is string length, m is maximum word length. typical 1D/1D. Need trie.
 * [140 Word Break II]({{ leetcode }}140.cpp)
-    * Output all possible answers in Word Break.
-    * O(nm) time, 1D/1D. Use trie.
+    * Output all possible answers in Word Break. Save possible previous indices at each position.
 * [174 Dungeon Game]({{ leetcode }}174.cpp)
     * A maze with HP gem and Toxic area. Calculate minimum start HP.
     * O(mn) time, 2D/0D. start HP can be zero once HP gem is enough.
@@ -570,7 +570,7 @@ Note: for dense problems, search with memo is much slower (~10x) than DP.
     * O(mn) time. 2D/0D. F[M][N]: maximal square with right-down (M, N). F[M][N] = min(F[M-1][N-1]+1,F[M-1][N]+1,F[M][N-1]+1)
 * [241 Different Ways to Add Parentheses]({{ leetcode }}241.cpp)
     * Given a string of numbers and operators, return all possible results by adding parentheses.
-    * O(n^3) time where k is number of results, typical 2D/1D DP.
+    * Typical 2D/1D DP, catalan number on operators.
 * [264 Ugly Number II]({{ leetcode }}264.cpp)
     * O(n) time. Similar to USACO Humble Numbers.
     * Make the result buffer mono, and keep a pointer pointing to the smallest result R that R\*P\>maxResult.
@@ -627,8 +627,8 @@ Note: for dense problems, search with memo is much slower (~10x) than DP.
 * [363 Max Sum of Rectangle No Larger Than K]({{ leetcode }}363.cpp)
     * O(m^2 * nlog(n)) time using binary search in prefix sums.
 * [368 Largest Divisible Subset]({{ leetcode }}368.cpp)
-    * Given a number array, find largest subset S that any Si, Sj in S have Si|Sj or Sj|Si.
-    * Note that such subset must be a chain that S1|S2|...|Sn. O(n^2) 1D/1D.
+    * Given a number array, find largest subset S that any Si, Sj in S have Si\|Sj or Sj\|Si.
+    * Note that such subset must be a chain that S1\|S2\|...\|Sn, i.e. linear order. O(n^2) 1D/1D.
 * [377 Combination Sum IV]({{ leetcode }}377.cpp)
     * Given a number array, find the number of combinations add up to a target. Order matters.
     * O(nk) time, 1D/1D. Enumerate sequence ends.
@@ -648,7 +648,7 @@ Note: for dense problems, search with memo is much slower (~10x) than DP.
     * O(2^n) time, state DP.
 * [467 Unique Substrings in Wraparound String]({{ leetcode }}467.cpp)
     * Wraparound string is ...abcd...xyzabcd.... Given a string, find how many of its substrings appear in it.
-    * O(n) time and O(26) space, for each character save maximum appeared length.
+    * O(26n) time and O(26) space, for each character save maximum appeared length.
 * [471 Encode String with Shortest Length]({{ leetcode }}471.cpp)
     * Find minimum encode of a string, e.g. "abbbabbbcabbbabbbc" -\> "2[2[abbb]c]".
     * O(n^3) time, typical 2D/1D. Build string by two parts or internal repeating units. The latter can be optimized by 459.
@@ -792,7 +792,7 @@ Two kinds of greedy policy: proovable by swapping or proovable by math induction
     * O(nlog(n)) time, sort by start position and merge.
 * [134 Gas Station]({{ leetcode }}134.cpp)
     * Given gas stations distributed on a circle, calculate whether one can travel around the circle once clockwise. Each gas station has limited gas volume.
-    * O(n) time by greedy. Note that if SUM(cost) <= SUM(gas), there is always a solution, otherwise the circle can be divided into multiple parts where SUM(cost_part) > SUM(gas_part), contradiction. Then go around the circle and find the maximum point as start.
+    * O(n) time by greedy. Note that if SUM(cost) <= SUM(gas), there is always a solution, otherwise the circle can be divided into multiple parts where SUM(cost\_part) > SUM(gas\_part), contradiction. Then go around the circle and find the maximum point as start.
 * [135 Candy]({{ leetcode }}135.cpp)
     * Children in a line, each with a rating value. Higher rate has more candy than neighbors. Calculate minimum candy.
     * O(n) time and O(1) space by greedy. Find all mountains, mountain feets are all ones and mountain tops depends to the longer side.
@@ -800,13 +800,13 @@ Two kinds of greedy policy: proovable by swapping or proovable by math induction
     * O(n) time. Seperate the array by 0, and try positive greedily.
 * [253 Meeting Rooms II]({{ leetcode }}253.cpp)
     * Given some meeting times, find out minimum number of meeting rooms required.
-    * O(nlog(n)) time by sorting and line sweeping. If the time range is not big, O(n) time is possible by prefix sum.
+    * O(nlog(n)) time by sorting and line sweeping.
 * [330 Patching Array]({{ leetcode }}330.cpp)
     * Given a sorted positive array, return minimum number of numbers needed to make any number in [1, n] is representable by sum of array numbers.
     * If \[0, n) is filled, then \[0, n + m) can be filled for any m <= n. Greedily choose m == n when there is no number from array.
 * [334 Increasing Triplet Subsequence]({{ leetcode }}334.cpp)
     * Given a number sequence, find if there is any i\<j\<k that nums[i]\<nums[j]\<nums[k].
-    * O(n) time and O(1) space. Maintain current minimum first two numbers.
+    * O(n) time and O(1) space. Like LIS, maintain minimum end of different length (3 here).
 * [358 Rearrange String k Distance Apart]({{ leetcode }}358.cpp)
     * Given strings like "aabbcc", re-arrange it i.e. the same characters are at least distance k from each other.
     * O(n) time, greedily choose most remaining character.
@@ -1322,7 +1322,7 @@ Some sequences satisfy that swapping adjacent elements doesn't affect other elem
     * Use hashset to find also works.
 * [411 Minimum Unique Word Abbreviation]({{ leetcode }}411.cpp)
     * Given a word and a dictionary, find the smallest abbr. of the word ("apple"-\>"a4", etc.) that doesn't conflict with the dictionary. A number's length is 1.
-    * O(mn\*2^m) time, where n\*2^m \<= 21. BFS with trie. BFS all nodes when in number region.
+    * O(mn\*2^m) time, where n\*2^m \<= 2^20. BFS with trie. BFS all nodes when in number region.
 * [421 Maximum XOR of Two Numbers in an Array]({{ leetcode }}421.cpp)
     * O(n) time, DFS on trie.
 * [425 Word Squares]({{ leetcode }}425.cpp)
@@ -1346,12 +1346,11 @@ Some sequences satisfy that swapping adjacent elements doesn't affect other elem
     * O(n) time and space with hashmap and merge list.
 * [251 Flatten 2D Vector]({{ leetcode }}251.cpp)
     * hasNext and next on a 2D vector.
-    * Implement move2d and move.
 * [271 Encode and Decode Strings]({{ leetcode }}271.cpp)
 * [281 Zigzag Iterator]({{ leetcode }}281.cpp)
     * Given two number lists, the iterator should return their elements alternatively.
 * [284 Peeking Iterator]({{ leetcode }}284.cpp)
-    * Create a temporary iterator and fint its next.
+    * Create a temporary iterator and find its next.
     * Cache next element.
 * [288 Unique Word Abbreviation]({{ leetcode }}288.cpp)
 * [341 Flatten Nested List Iterator]({{ leetcode }}341.cpp)
@@ -1384,6 +1383,7 @@ Some sequences satisfy that swapping adjacent elements doesn't affect other elem
 * [307 Range Sum Query - Mutable]({{ leetcode }}307.cpp)
 * [308 Range Sum Query 2D - Mutable]({{ leetcode }}308.cpp)
     * Quad tree.
+    * 2-D BIT.
 * [315 Count of Smaller Numbers After Self]({{ leetcode }}315.cpp)
     * Instrumented merge sort also do.
     * Maintain a sorted array and do binary search in it also do.
