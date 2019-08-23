@@ -168,7 +168,7 @@ General framework for combaination problems:
 * [109 Covert Sorted List to Binary Search Tree]({{ leetcode }}109.cpp)
     * Converted a sorted linked list into a balanced BST.
 * [138 Copy List with Random Pointer]({{ leetcode }}138.cpp)
-    * O(1) space by making origin-\>new single lists.
+    * O(1) space in 3 steps: 1) merge two lists into one and set random pointers in new nodes 2) walk list and modify random nodes 3) split list into origin lists.
 * [141 Linked List Cycle]({{ leetcode }}141.cpp)
 * [142 Linked List Cycle II]({{ leetcode }}142.cpp)
     * O(n) time and O(1) space achieved by Floyd's circle finding algorithm.
@@ -417,7 +417,7 @@ Mono stack/queue can maintain min/max in average O(1) time, get in strict O(1) t
     * O(nk) time using trie, where k is the length of int.
 * [316 Remove Duplicate Letters]({{ leetcode }}316.cpp)
     * Given a sequence, remove duplicate letters to get a lexicographical smallest subsequence.
-    * O(n) time using mono stack. Similar to Create Maximum Number.
+    * O(n) time using mono stack. Similar to Create Maximum Number. Do not stack-in character that already exists in answer because that will never make answer better.
 * [321 Create Maximum Number]({{ leetcode }}321.cpp)
     * Given two digit arrays, create maximum k-length number using digits from them. Order is preserved.
     * O(nk) time by mono stack. Enumerate number of digits picked from the two array. Bigger digit is always better to come first, leading to mono stack solution.
@@ -581,7 +581,7 @@ Note: for dense problems, search with memo is much slower (~10x) than DP.
     * Given n, find the least number of square numbers summing to n.
     * O(n^1.5) time. Typical knapsack.
 * [300 Longest Increasing Subsequence]({{ leetcode }}300.cpp)
-    * O(nlog(n)) time achieved by 1D/1D update optimization, i.e. mono stack.
+    * O(nlog(n)) time achieved by maintaining lenToMinEnd.
 * [304 Range Sum Query 2D - Immutable]({{ leetcode }}304.cpp)
     * Given a matrix, query it's subregion.
     * O(n^2) time by prefix (2D) sum.
@@ -753,7 +753,7 @@ Binary search on answer is a useful technique.
 * [327 Count of Range Sum]({{ leetcode }}327.cpp)
     * Given a number array, count different range sums.
     * O(nlog(n)) time by using balanced BST-alike data structure. Trie is also ok.
-    * By introducing prefix sums, this is a typical 1D/1D DP problem whose updating process can be optimized.
+    * By introducing prefix sums, this is a typical 1D/1D DP problem whose updating process can be optimized by BIT. Need discretization.
 * [410 Split Array Largest Sum]({{ leetcode }}410.cpp)
     * Given a number array, split it into m subarrays, find the minimum of the maximum of subarray sum.
     * O(n\*sumofarray) time, binary search on answer.
@@ -1254,7 +1254,7 @@ Some sequences satisfy that swapping adjacent elements doesn't affect other elem
     * Same as word ladder.
 * [440 K-th Smallest in Lexicographical Order]({{ leetcode }}440.cpp)
     * Given 1 and n, find k-th smallest in lexicographical order.
-    * Given n and n + 1 (without carry), find numbers between them by adding zeros.
+    * Walk on a decimal tree, find subtree sizes limited in upper bound.
 * [465 Optimal Account Balancing]({{ leetcode }}465.cpp)
     * People have debts among each other. Find minimum steps to clear the debt.
     * O(n!) time, calculate per-person surplus/deficit, then DFS.
