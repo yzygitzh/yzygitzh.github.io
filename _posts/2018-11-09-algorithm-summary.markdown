@@ -173,6 +173,9 @@ tags: Algorithm
 * [POJ 2411 Mondriaan's Dream]({{ poj }}2411.cpp)
     * Given mxn field, find number of filling methods with 1x2 bricks.
     * 0-1 encoding for vertical bricks and 1-1 for horizontal bricks. Then similar to 3254.
+* [OpenJudge 4119 复杂的整数划分问题]({{ poj }}4119.cpp)
+    * Given a number M, find number of plans to 1) divide it into K numbers 2) divide it into different numbers 3) divide it into odd numbers
+    * 1) is F[m][n] = F[m-1][n-1] (has 1) + F[m-n][n] (no 1). 2) and 3) are knapsack.
 
 # Greedy
 
@@ -482,7 +485,7 @@ tags: Algorithm
     * Binary search the distance. To validate the answer, use greedy policy to remove stones.
 * [POJ 1905 Expanding Rods]({{ poj }}1905.cpp)
     * Find solution of sin(A/x) = B/x (A > B).
-    * Binary search, termination condition is defined by |a-b|/min(a, b) < 1e-12.
+    * Binary search, termination condition is defined by \|a-b\|/min(a, b) < 1e-12.
 * [POJ 3122 Pie]({{ poj }}3122.cpp)
     * Given M pies with different radius, calculate maximum sub-piece for N people.
 
