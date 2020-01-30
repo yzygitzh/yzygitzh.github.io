@@ -1,0 +1,101 @@
+---
+layout: post
+title:  "A Survey on Multi-Tenant QoS Support for SSD"
+date:   2020-01-24 10:00:00 +0800
+categories: Machine_Learning
+tags: Deep_Learning
+---
+
+Reading and summarizing research papers on multi-tenant QoS support for SSD.
+
+# **Software Solutions**
+
+* [D Shue, et al. Performance Isolation and Fairness for Multi-Tenant Cloud Storage, OSDI 2012](https://www.usenix.org/system/files/conference/osdi12/osdi12-final-215.pdf)
+    * **Contribution**
+        * Proposing the first system to provide per-tenant fair resource sharing support for cloud storage service.
+    * **Approach**
+        * Data partitions should be placed with respect to demand and node capacity constraints.
+        * Weights for local access should give tenants throughput where they need it most.
+        * Data replicas should be selected in a weight-sensitive manner during accesses.
+        * Request queuing should enforce dominant resource fairness (DRF), e.g. from bytes in, bytes out and requests per second.
+    * **Evaluation**
+        * Evaluating MMR (min-max ratio) of the dominant resource across all tenants, 0 is worst and 1 is best.
+
+* [S Park, et al. FIOS: A Fair, Efficient Flash I/O Scheduler, FAST 2012](https://www.usenix.org/legacy/event/fast12/tech/full_papers/Park.pdf)
+    * **Contribution**
+        * FIOS, a new Flash I/O scheduler that attains fair- ness and high efficiency at the same time.
+    * **Approach**
+        * Fair time slice management, allowing I/O time slice fragmentation and concurrent request issuance.
+        * Read/write interference management, blocking all writes until outstanding reads finish.
+        * I/O parallelism
+        * I/O anticipation
+    * **Evaluation**
+        * Fairness: some tasks run in parallel, each task experiences a factor of n slowdown compared to running-alone. We call this proportional slowdown. Average latency is used to measure the slowdown.
+        * Efficiency: sum of (throughput(concurrent) / throughput(alone)).
+
+* [D T. Nguyen, et al. Reducing Smartphone Application Delay through Read/Write Isolation, MobiSys 2015](http://www.cs.wm.edu/~gpeng/files/mobisys15_application_delay.pdf)
+    * **Contribution**
+        * A software solution that schedules read/write I/Os on mobile phone that prioritizes reads over writes to reduce application load time.
+    * **Approach**
+        * I/O priority assignment: make a new priority for delayed write, with 100ms maximum delay.
+        * I/O grouping: group reads and writes, and dispatch reads before writes.
+    * **Evaluation**
+        * The system reduces launch delays by up to 37.8%, and run-time delays up to 29.6%.
+
+* [M Lee, et al. Improving Read Performance by Isolating Multiple Queues in NVMe SSDs, IMCOM 2017](https://dl.acm.org/doi/abs/10.1145/3022227.3022262)
+    * **Contribution**
+        * A software solution to isolate read and write requests in NVMe SSD.
+    * **Approach**
+        * Assumption: NVMe SSD controller processes requests in hardware queues in a round-robin manner.
+        * Separate read and write requests into different hardware queues.
+        * Moreover, group read/write hardware queues so that the rate of mix is even lower.
+    * **Evaluation**
+        * FIO read/write throughput (IOPS).
+
+* [M Nanavati, et al. Decibel: Isolation and Sharing in Disaggregated Rack-Scale Storage, NSDI 2017](https://www.usenix.org/system/files/conference/nsdi17/nsdi17-nanavati.pdf)
+
+* [B S Kim, et al. Utilitarian Performance Isolation in Shared SSDs, HotStorage 2018](https://www.usenix.org/system/files/conference/hotstorage18/hotstorage18-paper-kim-bryan.pdf)
+
+# **Open Channel SSD**
+
+* [J Huang, et al. FlashBlox: Achieving Both Performance Isolation and Uniform Lifetime for Virtualized SSDs, FAST 2017](https://www.usenix.org/system/files/conference/fast17/fast17_huang.pdf)
+    * **Contribution**
+        * A hardware-isolated virtual SSD solution achieving both physical performance isolation and wear leveling.
+    * **Approach**
+        * Use open-channel SSD to manage channels, dies and planes directly, thus achieve physical isolation except for some bus sharing.
+        * Periodically swap most-wear and least-wear physically isolated units to achieve wear leveling.
+    * **Evaluation**
+        * Evaluating tail latencies.
+        * Evaluating interference between latency sensitive and throughput sensitive applications.
+        * Evaluating migration overhead.
+
+# **New SSD Architecture**
+
+* [J Kang, et al. The Multi-streamed Solid-State Drive, HotStorage 2014](https://www.usenix.org/system/files/conference/hotstorage14/hotstorage14-paper-kang.pdf)
+    * **Contribution**
+        * Make SSD accept multiple I/O streams.
+    * **Approach**
+        * An I/O stream accepts data with similar lifetime.
+        * Data of different streams are stored into different piles of blocks. GCs are separated as well.
+    * **Evaluation**
+        * Evaluated the implementation on Cassandra, got higher throughput and lower tail latencies.
+
+* [J Kim, et al. Towards SLO Complying SSDs Through OPS Isolation, FAST 2015](https://www.usenix.org/system/files/conference/fast15/fast15-paper-kim-jaeho.pdf)
+    * **Contribution**
+        * A new SSD architecture that separates OPS (Over Provisioning Space) among different tenants so that GC caused by different tenants are not interfered. This interference hurts because when data is mixed, a single GC might involve data from multiple tenants, and block them.
+    * **Approach**
+        * Assign different tags to data from different tenants
+        * Inside SSD (implemented in SSD simulator), put data from different tenants to different regions
+    * **Evaluation**
+        * Proportioned multi-tenant I/O bandwidth test.
+
+* [S Yan, et al. Tiny-Tail Flash: Near-Perfect Elimination of Garbage Collection Tail Latencies in NAND SSDs, FAST 2017](https://www.usenix.org/system/files/conference/fast17/fast17-yan.pdf)
+    * **Contribution**
+        * A new SSD architecture that nearly eliminates GC-blocked I/Os.
+    * **Approach**
+        * Plane-blocking GC: Finer grained GC that happens on a specific plane instead of die or channel.
+        * Rotating GC: Orchestrating GCs in multiple planes so that they don't happen at the same time.
+        * GC-tolerant read: Use techniques like RAID5 so that data is available when one of the planes is blocked by GC.
+        * GC-tolerant flush: Use hardware RAM based write buffer to store write contents temporarily.
+    * **Evaluation**
+        * Evaluating tail latencies.
