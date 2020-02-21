@@ -273,13 +273,10 @@ tags: Algorithm
         * [POJ 3041 Asteroids]({{ poj }}3041.cpp)
             * Given (x, y) points, one can eliminate a row or a col. Find minimum steps to eliminate all points.
             * Build x-y bi-partite graph with super source and sink, find minimum cut (maximum match). Graph cut means no more points.
-            * There is a Konig theorem: |min-node-cov| = |max-match|.
+            * There is a Konig theorem: \|min-node-cov\| = \|max-match\|.
         * [POJ 3020 Antenna Placement]({{ poj }}3020.cpp)
             * Given (x, y) points, one can cover points using length-2 capsules. Find minimum capsules needed.
-            * |nodes| = |max-match| + |min-edge-cov|. Positions as nodes, capsules as edges.
-        * [POJ 2531 Network Saboteur]({{ poj }}2531.cpp)
-            * Find maximum cut of a fully connected graph.
-            * O(2^(n-1)\*n) time, state enumerate using gray code.
+            * \|nodes| = \|max-match\| + \|min-edge-cov\|. Positions as nodes, capsules as edges.
 
 * Flood Filling
     * [USACO Street Race]({{ usaco }}race3.cpp)
@@ -434,6 +431,9 @@ tags: Algorithm
 * [POJ 3411 Paid Roads]({{ poj }}3411.cpp)
     * Given a road graph, roads have costs. Some roads can be pre-paid at some node. Find minimum cost from node 1 to node N.
     * DFS, state is pre-paid roads and current city. Haven't get accepted yet.
+* [POJ 2531 Network Saboteur]({{ poj }}2531.cpp)
+    * Find maximum cut of a fully connected graph.
+    * O(2^(n-1)\*n) time, state enumerate using gray code.
 
 # String
 
