@@ -2,8 +2,8 @@
 layout: post
 title:  "A Survey on Multi-Tenant QoS Support for SSD"
 date:   2020-01-24 10:00:00 +0800
-categories: Machine_Learning
-tags: Deep_Learning
+categories: Storage
+tags: SSD QoS Performance_Isolation
 ---
 
 Reading and summarizing research papers on multi-tenant QoS support for SSD.
