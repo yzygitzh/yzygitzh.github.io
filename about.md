@@ -4,7 +4,7 @@ title: About
 permalink: /about/
 ---
 
-Ziyue Yang is a researcher in [Networking Research Group](https://www.microsoft.com/en-us/research/group/networking-research-group-2/), Microsoft Research Asia.
+Ziyue Yang is a senior researcher in [Networking Infrastructure Group (former NRG)](https://www.microsoft.com/en-us/research/group/networking-research-group-2/), Microsoft Research Asia.
 
 He received his MS degree in Computer Science from Peking University in 2020. His MS advisor was Professor [Yao Guo](https://yaoguopku.github.io). Previously, he got his BS degree from Peking University in 2017.
 
