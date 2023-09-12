@@ -10,7 +10,7 @@ He received his MS degree in Computer Science from Peking University in 2020. Hi
 
 His current research interest includes AI Infrastructure and Cloud Storage. Previously, he also worked in Mobile System and Mobile App Analysis.
 
-His publication list is as the following:
+His publication list is as the following (also check [Google Scholar](https://scholar.google.com/citations?user=MdoxXlsAAAAJ)):
 
 * Hwang, C.\*, Cui, W.\*, Xiong, Y.\*, __Yang, Z.__\*, Liu, Z., Hu, H., ... & Xiong, Y. _Tutel: Adaptive mixture-of-experts at scale_. __(MLSys'23)__ (*: Equal contribution)
 
