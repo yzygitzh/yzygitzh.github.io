@@ -13,25 +13,25 @@ His current research interest includes AI Infrastructure and Cloud Storage. Prev
 His publication list is as the following (or [Google Scholar](https://scholar.google.com/citations?user=MdoxXlsAAAAJ)):
 
 * _SPFresh: Incremental In-Place Update for Billion-Scale Vector Search_
-Yuming Xu, Hengyu Liang, Jin Li, Shuotao Xu, Qi Chen, Qianxi Zhang, Cheng Li, __Ziyue Yang__, Fan Yang, Yuqing Yang, Peng Cheng, Mao Yang
+Yuming Xu, Hengyu Liang, Jin Li, Shuotao Xu, Qi Chen, Qianxi Zhang, Cheng Li, __Ziyue Yang__, Fan Yang, Yuqing Yang, Peng Cheng, Mao Yang  
 __SOSP 2023__
 
 * _Tutel: Adaptive mixture-of-experts at scale_  
 Changho Hwang*, Wei Cui*, Yifan Xiong*, __Ziyue Yang*__, Ze Liu, Han Hu, Zilong Wang, Rafael Salas, Jithin Jose, Prabhat Ram, HoYuen Chau, Peng Cheng, Fan Yang, Mao Yang, Yongqiang Xiong  
-__MLSys 2023__  
+__MLSys 2023__ [PDF]({{ site.url }}/assets/papers/ziyue_yang_mlsys_2023.pdf)  
 *: Equal contribution
 
 * _Towards user-defined SLA in cloud flash storage_  
 Jinhao Fan, __Ziyue Yang__, Ran Shu, Peng Cheng, Yongqiang Xiong  
-__APSys 2021__
+__APSys 2021__ [PDF]({{ site.url }}/assets/papers/ziyue_yang_apsys_2021.pdf)
 
 * _ModelDiff: Testing-Based DNN Similarity Comparison for Model Reuse Detection_  
 Yuanchun Li, Ziqi Zhang, Bingyan Liu, __Ziyue Yang__, Yunxin Liu  
-__ISSTA 2021__
+__ISSTA 2021__ [PDF]({{ site.url }}/assets/papers/ziyue_yang_issta_2021.pdf)
 
 * _Humanoid: A Deep Learning-based Approach to Automated Black-box Android App Testing_  
 Yuanchun Li*, __Ziyue Yang*__, Yao Guo, Xiangqun Chen  
-__ASE 2019, Demo Track__  
+__ASE 2019, Demo Track__ [PDF]({{ site.url }}/assets/papers/ziyue_yang_ase_2019.pdf)  
 *: Equal contribution
 
 * _Automated Extraction of Personal Knowledge from Smartphone Push Notifications_  
