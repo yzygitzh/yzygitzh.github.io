@@ -12,7 +12,7 @@ His current research interest includes AI Infrastructure and Cloud Storage. Prev
 
 His publication list is as the following (or [Google Scholar](https://scholar.google.com/citations?user=MdoxXlsAAAAJ)):
 
-* _SPFresh: Incremental In-Place Update for Billion-Scale Vector Search_
+* _SPFresh: Incremental In-Place Update for Billion-Scale Vector Search_  
 Yuming Xu, Hengyu Liang, Jin Li, Shuotao Xu, Qi Chen, Qianxi Zhang, Cheng Li, __Ziyue Yang__, Fan Yang, Yuqing Yang, Peng Cheng, Mao Yang  
 __SOSP 2023__
 
