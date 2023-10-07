@@ -8,9 +8,9 @@ Ziyue Yang is a senior researcher in [Networking Infrastructure Group (former NR
 
 He received his MS degree in Computer Science from Peking University in 2020. His MS advisor was Professor [Yao Guo](https://yaoguopku.github.io). Previously, he got his BS degree from Peking University in 2017.
 
-His current research interest includes AI Infrastructure and Cloud Storage. Previously, he also worked in Mobile System and Mobile App Analysis.
+His current research interest includes AI Infrastructure and Cloud Storage. Previously, he also worked on Mobile System and Mobile App Analysis.
 
-His publication list is as the following (or [Google Scholar](https://scholar.google.com/citations?user=MdoxXlsAAAAJ)):
+His publications are as the following (or [Google Scholar](https://scholar.google.com/citations?user=MdoxXlsAAAAJ)):
 
 * _SPFresh: Incremental In-Place Update for Billion-Scale Vector Search_  
 Yuming Xu, Hengyu Liang, Jin Li, Shuotao Xu, Qi Chen, Qianxi Zhang, Cheng Li, __Ziyue Yang__, Fan Yang, Yuqing Yang, Peng Cheng, Mao Yang  
