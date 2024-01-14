@@ -12,16 +12,20 @@ His current research interest includes AI Infrastructure and Cloud Storage. Prev
 
 His publications are as the following (or [Google Scholar](https://scholar.google.com/citations?user=MdoxXlsAAAAJ)):
 
+* _FP8-LM: Training FP8 Large Language Models_  
+Houwen Peng\*, Kan Wu\*, Yixuan Wei\*, Guoshuai Zhao, Yuxiang Yang, Ze Liu, Yifan Xiong, __Ziyue Yang__, Bolin Ni, Jingcheng Hu, Ruihang Li, Miaosen Zhang, Chen Li, Jia Ning, Ruizhe Wang, Zheng Zhang, Shuguang Liu, Joe Chau, Han Hu, Peng Cheng  
+__arXiv pre-print__ [PDF](https://arxiv.org/pdf/2310.18313.pdf)
+
 * _SPFresh: Incremental In-Place Update for Billion-Scale Vector Search_  
 Yuming Xu, Hengyu Liang, Jin Li, Shuotao Xu, Qi Chen, Qianxi Zhang, Cheng Li, __Ziyue Yang__, Fan Yang, Yuqing Yang, Peng Cheng, Mao Yang  
 __SOSP 2023__
 
-* _Tutel: Adaptive mixture-of-experts at scale_  
-Changho Hwang*, Wei Cui*, Yifan Xiong*, __Ziyue Yang*__, Ze Liu, Han Hu, Zilong Wang, Rafael Salas, Jithin Jose, Prabhat Ram, HoYuen Chau, Peng Cheng, Fan Yang, Mao Yang, Yongqiang Xiong  
+* _Tutel: Adaptive Mixture-of-Experts at Scale_  
+Changho Hwang\*, Wei Cui\*, Yifan Xiong\*, __Ziyue Yang\*__, Ze Liu, Han Hu, Zilong Wang, Rafael Salas, Jithin Jose, Prabhat Ram, HoYuen Chau, Peng Cheng, Fan Yang, Mao Yang, Yongqiang Xiong  
 __MLSys 2023__ [PDF]({{ site.url }}/assets/papers/hwang_mlsys_2023.pdf)  
 *: Equal contribution
 
-* _Towards user-defined SLA in cloud flash storage_  
+* _Towards User-Defined SLA in Cloud Flash Storage_  
 Jinhao Fan, __Ziyue Yang__, Ran Shu, Peng Cheng, Yongqiang Xiong  
 __APSys 2021__ [PDF]({{ site.url }}/assets/papers/fan_apsys_2021.pdf)
 
@@ -30,7 +34,7 @@ Yuanchun Li, Ziqi Zhang, Bingyan Liu, __Ziyue Yang__, Yunxin Liu
 __ISSTA 2021__ [PDF]({{ site.url }}/assets/papers/li_issta_2021.pdf)
 
 * _Humanoid: A Deep Learning-based Approach to Automated Black-box Android App Testing_  
-Yuanchun Li*, __Ziyue Yang*__, Yao Guo, Xiangqun Chen  
+Yuanchun Li\*, __Ziyue Yang\*__, Yao Guo, Xiangqun Chen  
 __ASE 2019, Demo Track__ [PDF]({{ site.url }}/assets/papers/li_ase_2019.pdf)  
 *: Equal contribution
 
@@ -38,7 +42,7 @@ __ASE 2019, Demo Track__ [PDF]({{ site.url }}/assets/papers/li_ase_2019.pdf)
 Yuanchun Li, __Ziyue Yang__, Yao Guo, Xiangqun Chen, Yuvraj Agarwal, Jason I Hong  
 __IEEE BigData 2018__ [PDF]({{ site.url }}/assets/papers/li_bigdata_2018.pdf)
 
-* _What's inside your app?: Understanding Feature Redundancy in Mobile Apps_  
+* _What's Inside My App?: Understanding Feature Redundancy in Mobile Apps_  
 Yao Guo, Yuanchun Li, __Ziyue Yang__, Xiangqun Chen  
 __IEEE ICPC 2018__ [PDF]({{ site.url }}/assets/papers/guo_icpc_2018.pdf)
 
