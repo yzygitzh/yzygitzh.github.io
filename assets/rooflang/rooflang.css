@@ -45,7 +45,7 @@ a {
 .hero {
   position: relative;
   display: flex;
-  padding: 132px max(28px, calc((100vw - 1320px) / 2)) 120px;
+  padding: 132px max(28px, calc((100vw - 1320px) / 2)) 64px;
   flex-direction: column;
   align-items: center;
   color: var(--ink);
@@ -136,7 +136,7 @@ a {
   display: grid;
   width: min(1120px, calc(100% - 56px));
   margin: 0 auto;
-  padding: 120px 0 132px;
+  padding: 72px 0;
   grid-template-columns: 210px minmax(0, 760px);
   gap: 70px;
 }
@@ -190,7 +190,7 @@ a {
 }
 
 .explorer-section {
-  padding: 104px max(28px, calc((100vw - 1240px) / 2)) 86px;
+  padding: 72px max(28px, calc((100vw - 1240px) / 2)) 64px;
   background: var(--night);
   color: var(--white);
 }
@@ -723,8 +723,8 @@ a {
 }
 
 .citation-section {
-  padding-top: 116px;
-  padding-bottom: 126px;
+  padding-top: 72px;
+  padding-bottom: 88px;
 }
 
 .citation-section .section-content > p {
@@ -795,7 +795,7 @@ a {
 
 @media (max-width: 760px) {
   .hero {
-    padding: 88px 22px 82px;
+    padding: 88px 22px 52px;
   }
 
   .hero h1 {
@@ -808,13 +808,18 @@ a {
 
   .content-section {
     width: calc(100vw - 40px);
-    padding: 82px 0 91px;
+    padding: 58px 0 64px;
     grid-template-columns: 1fr;
     gap: 25px;
   }
 
   .explorer-section {
-    padding: 75px 20px 65px;
+    padding: 58px 20px 52px;
+  }
+
+  .citation-section {
+    padding-top: 58px;
+    padding-bottom: 68px;
   }
 
   .explorer-heading {
