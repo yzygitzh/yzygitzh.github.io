@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="RoofLang is a verification-constrained substrate for AI-driven architecting of LLM inference systems.">
+    <title>{{ page.title }} · RoofLang</title>
+    <link rel="stylesheet" href="{{ '/assets/rooflang/rooflang.css' | relative_url }}">
+  </head>
+  <body>
+    {{ content }}
+    <script>
+      window.ROOFLANG_DATA_URL = "{{ '/assets/rooflang/pareto-data.json' | relative_url }}";
+    </script>
+    <script src="{{ '/assets/rooflang/rooflang.js' | relative_url }}" defer></script>
+  </body>
+</html>
