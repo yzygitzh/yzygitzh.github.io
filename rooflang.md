@@ -154,7 +154,7 @@ permalink: /rooflang/
   <section class="content-section citation-section" id="citation">
     <div class="section-label"><span>03</span> Reference</div>
     <div class="section-content">
-      <h2>Cite us</h2>
+      <h2>Citation</h2>
       <p>If RoofLang is useful in your work, please cite the technical report.</p>
       <div class="citation-box">
         <pre id="bibtex"><code>@misc{yang2026rooflang,
