@@ -157,11 +157,10 @@ permalink: /rooflang/
     <div class="section-label"><span>03</span> Reference</div>
     <div class="section-content">
       <h2>Cite us</h2>
-      <p>If RoofLang helps your research, please cite the technical report.</p>
+      <p>If RoofLang is useful in your work, please cite the technical report.</p>
       <div class="citation-box">
-        <pre id="bibtex"><code>@misc{rooflang2026,
-  title        = {RoofLang: Enabling AI-Driven Architecting of
-                  LLM Inference Systems},
+        <pre id="bibtex"><code>@misc{yang2026rooflang,
+  title        = {RoofLang: Enabling AI-Driven Architecting of LLM Inference Systems},
   author       = &#123;&#123;RoofLang Project&#125;&#125;,
   year         = {2026},
   howpublished = {Technical report},
