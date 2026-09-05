@@ -20,6 +20,12 @@ MODELS = (
     "kimi_k3",
 )
 
+MAX_ACCELERATORS = {
+    "dsv4_flash": 128,
+    "glm_5_2_fp8": 64,
+    "kimi_k3": 64,
+}
+
 
 def optional_float(row: dict[str, str], key: str) -> float | None:
     value = row.get(key, "").strip()
@@ -64,6 +70,7 @@ def build(source_root: Path) -> list[dict[str, object]]:
     points: list[dict[str, object]] = []
     for model in MODELS:
         source = source_root / f"{model}_pareto_frontier" / "pareto_frontier.csv"
+        max_accelerators = MAX_ACCELERATORS.get(model)
         if not source.is_file():
             raise FileNotFoundError(source)
         with source.open(newline="", encoding="utf-8") as handle:
@@ -73,6 +80,8 @@ def build(source_root: Path) -> list[dict[str, object]]:
                 if row.get("status") != "ok":
                     continue
                 if row.get("memory_feasible_overlapped", "").lower() != "true":
+                    continue
+                if max_accelerators is not None and int(row["n_gpus"]) > max_accelerators:
                     continue
                 points.append(compact_point(model, row))
     points.sort(key=lambda point: (

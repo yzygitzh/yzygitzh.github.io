@@ -35,7 +35,7 @@ permalink: /rooflang/
     <div class="explorer-heading">
       <div>
         <h2>Explore the Pareto frontier.</h2>
-        <p>Compare throughput and interactivity across workloads, models, accelerators, and cluster sizes. Add multiple cases to the same chart; hover over any point to inspect its architecture.</p>
+        <p>Compare throughput-interactivity pareto frontiers, across workloads, models, accelerators, and cluster sizes. Each curve shows the ideal-overlap projection from RoofLang's roofline-based discrete-event simulator. Results are analytical estimates for comparing designs, not for real deployment predictions.</p>
       </div>
       <div class="metric-key" aria-label="Chart metrics">
         <span><i class="metric-dot x-dot"></i> x · interactivity</span>
@@ -49,6 +49,17 @@ permalink: /rooflang/
           <h3>Build a comparison</h3>
           <p>Choose a configuration, then add it to the chart.</p>
         </div>
+
+        <label class="field">
+          <span>Model</span>
+          <select id="model-select">
+            <option value="*" selected>All four models</option>
+            <option value="dsv4_flash">DeepSeek V4 Flash</option>
+            <option value="glm_5_2_fp8">GLM-5.3</option>
+            <option value="dsv4_pro">DeepSeek V4 Pro</option>
+            <option value="kimi_k3">Kimi K3</option>
+          </select>
+        </label>
 
         <label class="field">
           <span>Stage</span>
@@ -69,31 +80,20 @@ permalink: /rooflang/
         </label>
 
         <label class="field">
-          <span>Model</span>
-          <select id="model-select">
-            <option value="*" selected>All four models</option>
-            <option value="dsv4_flash">DeepSeek V4 Flash</option>
-            <option value="glm_5_2_fp8">GLM-5.3</option>
-            <option value="dsv4_pro">DeepSeek V4 Pro</option>
-            <option value="kimi_k3">Kimi K3</option>
-          </select>
-        </label>
-
-        <label class="field">
           <span>Accelerator</span>
           <select id="hardware-select">
             <option value="*">All six accelerators</option>
             <option value="h200">NVIDIA H200</option>
             <option value="gh200">NVIDIA GH200</option>
-            <option value="b300" selected>NVIDIA B300</option>
-            <option value="gb300">NVIDIA GB300</option>
+            <option value="b300">NVIDIA B300</option>
+            <option value="gb300" selected>NVIDIA GB300</option>
             <option value="rtx6000d">NVIDIA RTX 6000D</option>
             <option value="ascend950dt">Huawei Ascend 950DT</option>
           </select>
         </label>
 
         <label class="field">
-          <span>GPU count</span>
+          <span>Accelerator count</span>
           <select id="gpu-select">
             <option value="8">8</option>
             <option value="16">16</option>
@@ -132,8 +132,7 @@ permalink: /rooflang/
 
         <div class="chart-wrap" id="chart-wrap">
           <div class="chart-loading" id="chart-loading"><span></span> Loading simulation data…</div>
-          <svg id="pareto-chart" viewBox="0 0 960 570" role="img" aria-labelledby="chart-title chart-desc">
-            <title id="chart-title">RoofLang Pareto frontier comparison</title>
+          <svg id="pareto-chart" viewBox="0 0 960 570" role="img" aria-label="Interactive Pareto frontier chart" aria-describedby="chart-desc">
             <desc id="chart-desc">Interactive chart of per-user interactivity against per-GPU throughput.</desc>
           </svg>
           <div class="tooltip" id="chart-tooltip" role="tooltip" hidden></div>
@@ -148,7 +147,6 @@ permalink: /rooflang/
         </div>
       </div>
     </div>
-    <p class="explorer-footnote">Each curve shows the ideal-overlap projection from RoofLang's roofline-based discrete-event simulator. Results are analytical estimates for comparing designs, not production latency predictions.</p>
   </section>
 
   <section class="content-section citation-section" id="citation">

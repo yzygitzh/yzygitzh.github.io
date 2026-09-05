@@ -67,12 +67,15 @@
 
   function shortLabel(key) {
     const item = parseKey(key);
-    return `${MODEL_LABELS[item.model]} · ${HARDWARE_LABELS[item.hardware].replace("NVIDIA ", "").replace("Huawei ", "")} · ${item.gpus}× · ${item.stage} ${item.context.toUpperCase()}`;
+    return `${MODEL_LABELS[item.model]} · ${configurationLabel(item)}`;
   }
 
   function fullLabel(key) {
-    const item = parseKey(key);
-    return `${MODEL_LABELS[item.model]} · ${HARDWARE_LABELS[item.hardware]} · ${item.gpus} GPUs · ${capitalize(item.stage)} · ${item.context.toUpperCase()}`;
+    return shortLabel(key);
+  }
+
+  function configurationLabel(item) {
+    return `${capitalize(item.stage)} ${item.context.toUpperCase()} · ${item.gpus} ${HARDWARE_LABELS[item.hardware]}`;
   }
 
   function capitalize(value) {
@@ -169,7 +172,6 @@
 
   function renderChart() {
     chart.replaceChildren(
-      svgElement("title", { id: "chart-title" }, "RoofLang Pareto frontier comparison"),
       svgElement("desc", { id: "chart-desc" }, "Interactive chart of per-user interactivity against per-GPU throughput."),
     );
     tooltip.hidden = true;
@@ -281,7 +283,7 @@
   function showTooltip(event, point, key) {
     const parallelism = `CP ${point.cp} · DP ${point.dp} · EP ${point.ep} · PP ${point.pp}`;
     tooltip.innerHTML = `
-      <div class="tooltip-title">${escapeHtml(MODEL_LABELS[point.model])}<span>${escapeHtml(HARDWARE_LABELS[point.hardware])} · ${point.gpus} GPUs · ${capitalize(point.stage)} ${point.context.toUpperCase()}</span></div>
+      <div class="tooltip-title">${escapeHtml(MODEL_LABELS[point.model])}<span>${escapeHtml(configurationLabel(point))}</span></div>
       <div class="tooltip-grid">
         <div class="tooltip-item"><span>Interactivity</span><strong>${formatMetric(point.x, 1)} tok/s/user</strong></div>
         <div class="tooltip-item"><span>Throughput</span><strong>${formatMetric(point.y, 1)} tok/s/GPU</strong></div>
@@ -419,7 +421,7 @@
   function resetSeries() {
     state.active.clear();
     state.nextColor = 0;
-    const defaults = MODEL_ORDER.map((model) => makeKey("decode", "64k", model, "b300", 64));
+    const defaults = MODEL_ORDER.map((model) => makeKey("decode", "64k", model, "gb300", 64));
     addKeys(defaults, true);
     controlStatus.textContent = "Showing the default four-model comparison.";
     controlStatus.classList.remove("is-error");
