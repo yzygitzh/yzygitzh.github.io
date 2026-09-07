@@ -82,13 +82,11 @@ permalink: /rooflang/
         <label class="field">
           <span>Accelerator</span>
           <select id="hardware-select">
-            <option value="*">All six accelerators</option>
+            <option value="*">All four accelerators</option>
             <option value="h200">NVIDIA H200</option>
             <option value="gh200">NVIDIA GH200</option>
             <option value="b300">NVIDIA B300</option>
             <option value="gb300" selected>NVIDIA GB300</option>
-            <option value="rtx6000d">NVIDIA RTX 6000D</option>
-            <option value="ascend950dt">Huawei Ascend 950DT</option>
           </select>
         </label>
 

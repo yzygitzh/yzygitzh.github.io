@@ -3,6 +3,7 @@
 
 The source CSVs are the per-model Pareto-frontier exports. The project page
 shows their ideal-overlap projection, matching the technical report.
+RTX 6000D and Ascend 950DT are excluded from all project-page data exports.
 """
 
 from __future__ import annotations
@@ -21,10 +22,13 @@ MODELS = (
 )
 
 MAX_ACCELERATORS = {
-    "dsv4_flash": 128,
-    "glm_5_2_fp8": 64,
+    "dsv4_flash": 256,
+    "glm_5_2_fp8": 128,
+    "dsv4_pro": 256,
     "kimi_k3": 64,
 }
+
+EXCLUDED_HARDWARE = frozenset({"rtx6000d", "ascend950dt"})
 
 
 def optional_float(row: dict[str, str], key: str) -> float | None:
@@ -70,18 +74,20 @@ def build(source_root: Path) -> list[dict[str, object]]:
     points: list[dict[str, object]] = []
     for model in MODELS:
         source = source_root / f"{model}_pareto_frontier" / "pareto_frontier.csv"
-        max_accelerators = MAX_ACCELERATORS.get(model)
+        max_accelerators = MAX_ACCELERATORS[model]
         if not source.is_file():
             raise FileNotFoundError(source)
         with source.open(newline="", encoding="utf-8") as handle:
             for row in csv.DictReader(handle):
+                if row["hardware"] in EXCLUDED_HARDWARE:
+                    continue
                 if row.get("_plot_timing") != "overlapped":
                     continue
                 if row.get("status") != "ok":
                     continue
                 if row.get("memory_feasible_overlapped", "").lower() != "true":
                     continue
-                if max_accelerators is not None and int(row["n_gpus"]) > max_accelerators:
+                if int(row["n_gpus"]) > max_accelerators:
                     continue
                 points.append(compact_point(model, row))
     points.sort(key=lambda point: (
