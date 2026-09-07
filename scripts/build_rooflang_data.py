@@ -3,7 +3,6 @@
 
 The source CSVs are the per-model Pareto-frontier exports. The project page
 shows their ideal-overlap projection, matching the technical report.
-RTX 6000D and Ascend 950DT are excluded from all project-page data exports.
 """
 
 from __future__ import annotations
@@ -27,8 +26,6 @@ MAX_ACCELERATORS = {
     "dsv4_pro": 256,
     "kimi_k3": 64,
 }
-
-EXCLUDED_HARDWARE = frozenset({"rtx6000d", "ascend950dt"})
 
 
 def optional_float(row: dict[str, str], key: str) -> float | None:
@@ -79,8 +76,6 @@ def build(source_root: Path) -> list[dict[str, object]]:
             raise FileNotFoundError(source)
         with source.open(newline="", encoding="utf-8") as handle:
             for row in csv.DictReader(handle):
-                if row["hardware"] in EXCLUDED_HARDWARE:
-                    continue
                 if row.get("_plot_timing") != "overlapped":
                     continue
                 if row.get("status") != "ok":

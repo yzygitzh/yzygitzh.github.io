@@ -13,6 +13,8 @@
     gh200: "NVIDIA GH200",
     b300: "NVIDIA B300",
     gb300: "NVIDIA GB300",
+    rtx6000d: "NVIDIA RTX 6000D",
+    ascend950dt: "Huawei Ascend 950DT",
   };
   const MODEL_ORDER = Object.keys(MODEL_LABELS);
   const HARDWARE_ORDER = Object.keys(HARDWARE_LABELS);
@@ -27,6 +29,8 @@
     gh200: "7 4",
     b300: "",
     gb300: "3 3",
+    rtx6000d: "10 4",
+    ascend950dt: "10 3 2 3",
   };
   const MAX_SERIES = 24;
 
