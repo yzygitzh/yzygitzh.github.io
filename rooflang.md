@@ -11,7 +11,7 @@ permalink: /rooflang/
       <span class="title-line">Architecting of LLM Inference Systems</span>
     </h1>
     <div class="hero-actions">
-      <a class="button button-primary" href="#paper" title="Technical report link coming soon">
+      <a class="button button-primary" href="https://arxiv.org/abs/2609.12551" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h8l4 4v16H6zM14 2v5h5M9 13h6M9 17h4" /></svg>
         Technical report
       </a>
@@ -155,12 +155,12 @@ permalink: /rooflang/
       <h2>Citation</h2>
       <p>If RoofLang is useful in your work, please cite the technical report.</p>
       <div class="citation-box">
-        <pre id="bibtex"><code>@misc{yang2026rooflang,
-  title        = {RoofLang: Enabling AI-Driven Architecting of LLM Inference Systems},
-  author       = &#123;&#123;RoofLang Project&#125;&#125;,
-  year         = {2026},
-  howpublished = {Technical report},
-  url          = {https://yzygitzh.github.io/rooflang/}
+        <pre id="bibtex"><code>@article{yang2026rooflang,
+  author = {Yang, Ziyue and Jiang, Yuting and Qu, Lei and Cheng, Peng},
+  title = {RoofLang: Enabling AI-Driven Architecting of LLM Inference Systems},
+  journal = {arXiv preprint arXiv:2609.12551},
+  year = {2026},
+  url = {https://arxiv.org/abs/2609.12551}
 }</code></pre>
         <button type="button" class="copy-button" id="copy-citation"><span>Copy BibTeX</span></button>
       </div>
