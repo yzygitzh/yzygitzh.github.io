@@ -22,7 +22,7 @@ MODELS = (
 
 MAX_ACCELERATORS = {
     "dsv4_flash": 256,
-    "glm_5_2_fp8": 128,
+    "glm_5_2_fp8": 256,
     "dsv4_pro": 256,
     "kimi_k3": 64,
 }
